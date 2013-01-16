@@ -1,4 +1,5 @@
 kandidaatinTutkielma
-====================
+===================
 
-Git repo kandia varten
+Tämä repository on tehty minun kandidaatintutkielmaani varten. Työn on tarkoitus valmistua kevään 2013 aikana. 
+Tutkielma koostuu eri osista.
