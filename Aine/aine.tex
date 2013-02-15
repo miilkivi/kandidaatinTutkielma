@@ -115,35 +115,60 @@
 
 \section{Johdanto}
 
-Ohjelmistojen merkitys ihmisten jokapäiväisessä elämässä on kasvanut. Samalla ohjelmistoja on kehitetty sovellus alueille, joissa virheen sattumisella voi olla kohtalokkaat seuraukset.
+Tietokoneet ja tietokoneiden kaltaiset laitteet ovat yleistyneet ihmisten käytössä. Tietokoneita ja laitteita, jotka toimivat ohjelmistoilla löytyy ihmisten kodeista ja työpaikoilta. Näihin laitteisiin kehitetään jatkuvasti uusia ohjelmistoja ja vanhoja ohjelmistoja kehitetään paremmiksi. Ohjelmistojen kehittäminen on kuitenkin monimutkainen prosessi, jonka onnistumiseen vaikuttavat monet tekijät.
 
-Ohjelmistotuotantoprojekti epäonnistuvat usein saavuttamaan sille asetetut tavoitteet. Syitä ohjelmistotuotantoprojektien epäonnistumiselle on pyritty tutkimaan. Syyt liittyvät usein ohjelmiston laatuun tai aikataulun ja budjetin ylityksiin.
+Ohjelmistotuotanto on ihmislähtöistä toimintaa, jossa ihmiset tekevät ohjelmistoja ihmisille~\cite{Wang:2010:PPP:1810295.1810302}(kaivettava alkup?). Ihmisillä on siis suuri vaikutus projektien onnistumiseen ja epäonnistumiseen. Muita projektin tulokseen vaikuttavia tekijöitä ovat projektin toimintavat, käytettävä kehitysprosessi ja ympäristö, jossa projektia toteutetaan~\cite{McLeod:2011:FAS:1978802.1978803}. 
 
-Ohjelmistotuotanprojektien onnistumiseen johtavia tekijöitä pyritty selvittämääm tutkimuksilla. Ohjelmistotuotanto on ihmislähtöistä toimintaa, jossa ihmiset tekevät ohjelmia ihmisille~\cite{Wang:2010:PPP:1810295.1810302}. Ohjelmistotuotantoprojektin tuloksiin vaikuttavat ihmiset, toimintatavat, kehitysprosessi ja projektin ympäristö. 
 
 Tässä aineessa pyrin selvittämään ihmisten ja toimintatapojen vaikutusta projektin lopputuloksiin. Aine keskittyy johtamisen ja johtajuuden vaikutuksiin ohjelmistotuotantoprojektiin. Tavoitteena on myös löytää keinoja joiden avulla projektin johtajalla on mahdollisuus vaikuttaa projektin lopputulokseen. Ohjelmistotuotantoprojektin johtamista tutkitaan tarkemmin ketterien menetelmien ja avoimen kehityksen näkökulmista.
 
-Aine jakautuu viteen osaan. Ensimmäisessä osassa esitellään käsiteltävät kehitys metodologia. Toinen osa keskittyy ohjelmistotuotanprojektin johtamiseen yleisellä tasolla. Seuraavat kaksi osiota syvennytään johtamiseen ketterissä menetelmissä sekä avoimessa ohjelmistokehityksessä. Viimeisessä osassa etsitään keinoja kuinka johtaja ja johtajan persoonallisuus voivat vaikuttaa ohjelmistotuotantoprojektin tuloksiin.
+Johtamista käsitellään eri tasoilla. Käsiteltävänä on kehitysryhmän sisäinen ja ulkoinen johtaminen. Aineessa luodaan myös katsausta ylemmän organisaation johtamisen vaikutuksesta ryhmän toimintaan. 
+
+Aine jakautuu viteen osaan. Ensimmäisessä osassa esitellään käsiteltävät kehitys menetelmät. Toinen osa keskittyy ohjelmistotuotanprojektin johtamiseen yleisellä tasolla. Seuraavat kaksi osiota syvennytään johtamiseen ketterissä menetelmissä sekä avoimessa ohjelmistokehityksessä. Viimeisessä osassa etsitään keinoja kuinka johtaja ja johtajan persoonallisuus voivat vaikuttaa ohjelmistotuotantoprojektin tuloksiin.
   
 
 
 
 \section{Ohjelmsitotuotantoprojektin kehitys menetelmät}
 
-Ohjelmistojen tuottamiseen on kehittynyt erialisia metodologiota kehittään ohjelmistoja. Tässä aineessa käsittelen tarkemmin johtamista ketterien menetelmien ja avoimen ohjelmistokehityksen näkökulmasta. Tässä osassa esittelen nämä kaksi metdologiaa.
+Ohjelmistojentuottamiseen on kehittynyt erialisia kehitys menetelmiä. Tässä aineessa käsittellään tarkemmin johtamista ketterien menetelmien ja avoimen ohjelmistokehityksen näkökulmasta. Tässä luvussa esitellään kyseisten menetelmien ideaologioita ja persukäsitteistöä. Ketteristä menetelmstä esitellään yksittäisiä menetelmiä ja avoimesta kehityksestä esitellään tunnetuja projekteja.
 
 \subsection{Ketterät menetelmät}
 
-Ketterillä menetelmillä tarkoitetaan kehitys kehyksiä joita ohjelmistotuotantoprojekteissa voidaan käyttää. Ketterät menetelmät perustavat ketterään manifestiin (Tähän tulee manifesti lähteeksi miten sitä saa käyttä). Ketterein menetelmien avulla pyritään luomaan kehittäjille työrauha. Tärkeintä ketterissä menetelmissä on aikainen ja jatkuva tuotteen näyttäminen asiakkaalle. Tämän avaulla saavutetaan paras asiakastyytyväisyys. Ketteriä menetelmiä on arvosteltu aikataulun ja budjetin ylittämisestä~\cite{Guo:2008:SSP:1414004.1414046}.
+Ketterät menetelmät (agile methodologies) on kokoelma erilaisia kehitys menetelmiä, joiden ideologia perustuu ketterän manifestin ajatuksiin (Tähän tulee agilen viiten kun osaan sen tehdä). Menetelmien tarkoituksena on pyrkiä mahdollisimman hyvään asiakas tyytyväisyyteen. Tämän tavoitteen saavuttamiseksi ohjelmistosta pyritään tarjoamaan asiakkaalle toimiva versio jatkuvasti kehityksen aikana. 
+
+Manifesti os syntynyt vuonna 2001 17 tunnetun ohjelmistoalanammattilaisen tapaamisessa. Ryhmän jäsenten oli tarkoitus löytää yheteinen käsitys uusista menetelmistä, joita oli ohjelmistojen kehitykseen syntynyt. Ketteriksi menetelmiksi voidaan lukea muunmuassa Extreme programing(XP), SCRUM, Crystal  ja Feature-Driven development. Tässä aineessa ketteristä menetelmistä käsitellään tarkemmin johtamista XP ja SCRUM kehyksissä. 
+
+Ketteriä menetelmien toivottiin ratkaisevan ohjelmistotuotantoprojektien ongelmat. Manifestin kirjoittajat kuitenkin korostava että he eivät ole löytäneet täydellistä ratkaisua ohjelmistojen kehityksen ongelmiin. Ketteriä menetelmiä on arvosteltu aikatualun ja budjetin ylittämisestä~\cite{Guo:2008:SSP:1414004.1414046}.   
+
+Ketterät menetelmät korostavat ihmisten välistä vuorovaikutusta. Vuorovaikutuksen korostaminen vaikuttaa oleellisesti johtamiseen. Manifesti kehoittaa kasvokkain tapahtuvaan vuorovaikutukseen. Vuorovaikutusta asiakkaan ja kehitysryhmän välillä korostetaan.
+
+XP.... on kehittynyt (kun artsuja :P)
+
+SCRUM... on kehittynyt (kun artsuja :P) 
+
+
 
 
 \subsection{Avoin ohjelmistokehitys}
 
-Avoimessa ohjelmistotuotannossa ohjelmistoa kehittävä yhteisö on pääsääntöisesti hajautunut, eivätkä ihmiset tunne toisiaan. Ohjelmiston kehittäminen perustuu vapaaehtoisuuteen, joten kehittäjiä kiinnosta jokin muu kuin raha. Avoin ohjelmisto kehitys koetaan tärkeäksi, josta kertoo myös monien avointen projektien rooli tämän päivän maailmassa. ~\cite{Li:2006:MOS:1125170.1125182}
+Avoimet ohjelmistot ovat ohjelmia joita kehittävät ryhmät, jotka koostuvat vapaaehtoisesista ihmisistä joille ei makseta palkkaa ohjelmiston kehittämisestä. Ryhmien jäsenistö on maantieteellisesti hajaantunutta. Kommunikaatio ja osallistuminen kehitystoimintaan tapahtuu internetin välityksellä.
+
+Avoin ohjelmisto kehitys koetaan tärkeäksi, josta kertoo myös monien avointen projektien rooli tämän päivän maailmassa~\cite{Li:2006:MOS:1125170.1125182}. Tunnettuja avoimen ohjelmistokehityksen tuotteita ovat Linux, Apache, Mozilla Firefox, Netbeans ja Eclipse. 
+
+Avoimille ohjelmistoille löytyy usein kaupallinen vastine, jota vastaan avoinohjelmisto kilpailee~\cite{Luther:2008:LOC:1460563.1460619}(Alkuperäinen tarvitaan). Linux, joka on avoin käyttöjärjestelmä on vastine Microsoftin Windows käyttöjärjestelmälle ja Netbeans sekä Eclipse ovat Microsoftin Visual studion avoimia vastikkeita. Avoimesti kehitetyt ohjelmistot ovat pääosin ilmaisia joten niillä on hinnan perusteella etulyönti asema kaupallisiin kilpailijoihinsa nähden. 
+
+Avoimen ohjelmitokehitysprojektin johtamista tarkastellaan tässä aineessa kolmen eri projektin näkökulmasta. Käsiteltäviä projekteja ovat Linux, Apache ja Netbeans. Käsiteltävien projektien ohella luodaan katsasus verkosssa toimivien kehitys yhteisöiden johtamisesta. 
+
+Linux... on kehittynyt (kun artsu luettu :P)
+
+Apache... On kehittynyt (kun artsu luettu :P)
+
+Netbeans on kehitysympäristö jota kehittää ja ylläpitää Netbeans.org-yhteisö. Netbeanssin kehitys on aloitettu vuonna 1996. Netbeans oli alunperin opiskelija lähtöinen projekti,  jonka  Sun julkaisi avoimeen kehitykseen~\cite{1385637}. Kehittäjät osallistuvat yhteisön toimintaan sähköpostilistoilla, korjaamalla ohjelmistoa, päivittämällä nettsivuja tai tekemällä käännöstä ohjelmsta. 
 
 \section{Johtaminen ja johtajuus ohjelmistotuotannossa}
 
-Ohjelmistotuotannossa johtamisella voidaan tarkoittaa useita erilaisia johtamisen tasoja. Tässä osassa selvitetään kuinka erilaiset johtamisen tasot vaikuttavat ohjelmistotuotantoprojektiin. Aluksi puhutaan johtamisesta yleisesti ja siitä missä johtamista esiintyy. Tämän jälkeen käsitellään ylemmän hallinon johtamisen vaikutusta ohejlmistotuotanprojektin toimintaan. Tämän jälkeen siirrytään itse projektin johtamiseen. Tämän osan lopussa käydään läpi johtajan persoonallisuuden vaikutusta johtamiseen.
+Ohjelmistotuotannossa johtamisella voidaan tarkoittaa useita erilaisia johtamisen tasoja. Tässä osassa selvitetään kuinka erilaiset johtamisen tasot vaikuttavat ohjelmistotuotantoprojektiin. Aluksi puhutaan johtamisesta yleisesti ja siitä missä johtamista esiintyy. Tämän jälkeen käsitellään ylemmän hallinon johtamisen vaikutusta ohejlmistotuotanprojektin toimintaan. Tämän jälkeen siirrytään itse projektin johtamiseen. Tämän luvun lopussa käydään läpi johtajan persoonallisuuden vaikutusta johtamiseen.
 
 \subsection{Yleinen johtaminen}
 
@@ -188,7 +213,7 @@ Johtajan tärkeimmäksi tehtäväksi avoimessa ohjelmistokehityksessä  voidaan 
 
 Johtaja mahdollisuudet vaikuttaa ohjelmistotuotantoprosessin lopputulokssen on monet. Tässä luvussa käsitellään tapoja joilla johtaja voi vaikuttaa ohjelmisotuotanprojektin lopputuloksiin. Luvussa käsitellään myös aiheita, joita projektin johtajan tulee ottaa huomioon kehityksen aikan, jotta projekti voi onnistua. 
 
-Johtajan persoonan vaikutusta voidaan tutkia Five Factor personal mallin avulla ja Mohan Thiten mallin avulla~\cite{Wang:2009:PMP:1639950.1640049}. 
+Johtajan persoonan vaikutusta voidaan tutkia Five Factor personal mallin avulla ja Mohan Thiten mallin avulla~\cite{Wang:2009:PMP:1639950.1640049}(Tähänkin joutuu kaivaa alkuperäisen). 
 
 
 \section{Yhteenveto}
@@ -204,14 +229,9 @@ Johtajan persoonan vaikutusta voidaan tutkia Five Factor personal mallin avulla 
 
 
 
-
-
-Esimerkkilause ja lähdeviite~\cite{McLeod:2011:FAS:1978802.1978803}
 Esimerkkilause ja lähdeviite~\cite{Guo:2008:SSP:1414004.1414046}.
-Esimerkkilause ja lähdeviite~\cite{Luther:2008:LOC:1460563.1460619}
 Esimerkkilause ja lähdeviite~\cite{Zhang:2011:ECL:2047594.2047666}
 Esimerkkilause ja lähdeviite~\cite{Dhomne:2012:ITL:2382887.2382899}
-Esimerkkilause ja lähdeviite~\cite{1385637}
 Esimerkkilause ja lähdeviite~\cite{bahli2005group}
 Esimerkkilause ja lähdeviite~\cite{Augustine:2005:APM:1101779.1101781}
 Esimerkkilause ja lähdeviite~\cite{Chow2008961}
