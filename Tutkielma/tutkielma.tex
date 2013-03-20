@@ -1,0 +1,338 @@
+% --- Template for thesis / report with tktltiki2 class ---
+
+\documentclass[finnish]{tktltiki2}
+
+% tktltiki2 automatically loads babel, so you can simply
+% give the language parameter (e.g. finnish, swedish, english, british) as
+% a parameter for the class: \documentclass[finnish]{tktltiki2}.
+% The information on title and abstract is generated automatically depending on
+% the language, see below if you need to change any of these manually.
+% 
+% Class options:
+% - grading                 -- Print labels for grading information on the front page.
+% - disablelastpagecounter  -- Disables the automatic generation of page number information
+%                              in the abstract. See also \numberofpagesinformation{} command below.
+%
+% The class also respects the following options of article class:
+%   10pt, 11pt, 12pt, final, draft, oneside, twoside,
+%   openright, openany, onecolumn, twocolumn, leqno, fleqn
+%
+% The default font size is 11pt. The paper size used is A4, other sizes are not supported.
+%
+% rubber: module pdftex
+
+% --- General packages ---
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
+\usepackage[pdftex,hidelinks]{hyperref}
+
+% Automatically set the PDF metadata fields
+\makeatletter
+\AtBeginDocument{\hypersetup{pdftitle = {\@title}, pdfauthor = {\@author}}}
+\makeatother
+
+% --- Language-related settings ---
+%
+% these should be modified according to your language
+
+% babelbib for non-english bibliography using bibtex
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{finnish}
+
+% add bibliography to the table of contents
+\usepackage[nottoc,numbib]{tocbibind}
+% tocbibind renames the bibliography, use the following to change it back
+\settocbibname{Lähteet}
+
+% --- Theorem environment definitions ---
+
+\newtheorem{lau}{Lause}
+\newtheorem{lem}[lau]{Lemma}
+\newtheorem{kor}[lau]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[lau]{Määritelmä}
+\newtheorem{ong}{Ongelma}
+\newtheorem{alg}[lau]{Algoritmi}
+\newtheorem{esim}[lau]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem*{huom}{Huomautus}
+
+
+% --- tktltiki2 options ---
+%
+% The following commands define the information used to generate title and
+% abstract pages. The following entries should be always specified:
+
+\title{Johtaminen ja johtajuus, rooli ja vaikutus ohjelmistotuotantoprojekteissa: ketterät mentelmät}
+\author{Mika Kivi}
+\date{\today}
+\level{Kandidaatin tutkielma}
+\abstract{Tiivistelmä.}
+
+% The following can be used to specify keywords and classification of the paper:
+
+\keywords{johtaminen, ohjelmistotuotanprojektin johtaminen, muutos johtaminen}
+\classification{} % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
+                  % This is probably mostly relevant for computer scientists
+
+% If the automatic page number counting is not working as desired in your case,
+% uncomment the following to manually set the number of pages displayed in the abstract page:
+%
+% \numberofpagesinformation{16 sivua + 10 sivua liitteissä}
+%
+% If you are not a computer scientist, you will want to uncomment the following by hand and specify
+% your department, faculty and subject by hand:
+%
+% \faculty{Matemaattis-luonnontieteellinen}
+% \department{Tietojenkäsittelytieteen laitos}
+% \subject{Tietojenkäsittelytiede}
+%
+% If you are not from the University of Helsinki, then you will most likely want to set these also:
+%
+% \university{Helsingin yliopisto}
+% \universitylong{HELSINGIN YLIOPISTO --- HELSINGFORS UNIVERSITET --- UNIVERSITY OF HELSINKI} % displayed on the top of the abstract page
+% \city{Helsinki}
+%
+
+
+\begin{document}
+
+% --- Front matter ---
+
+\maketitle        % title page
+\makeabstract     % abstract page
+
+\tableofcontents  % table of contents
+\newpage          % clear page after the table of contents
+
+
+% --- Main matter ---
+
+\section{Johdanto}
+
+
+Ohjelmistotuotanto on ihmislähtöistä toimintaa, jossa ihmiset tekevät ohjelmistoja ihmisille~\cite{Wang:2010:PPP:1810295.1810302}. Ihmisten toiminnalla on suuri vaikutus projektien onnistumiseen ja epäonnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}. Muita projektin tulokseen vaikuttavia tekijöitä ovat projektin toimintatavat, käytettävä kehitysmenetelmä ja ympäristö, jossa projekti toteutetaan~\cite{McLeod:2011:FAS:1978802.1978803}.
+
+Ohjelmistotuotantoprojekteissa on tapahtumassa murros perinteisistä malleista kohti uudempia, niin kutsuttuja ketteriä menetelmiä~\cite{Chow2008961}.  Projektimallin muuttuminen on vaikuttanut projektiryhmän toimintaan. Muutokset ovat vaikuttaneet ohjelmistotuotantoprojektien johtamiseen ja johtajana toimimiseen ohjelmistotuotantoprojekteissa.
+
+Perinteisessä vesiputousmallissa johtaminen on ollut armeijamaista~\cite{Nerur:2005:CMA:1060710.1060712}. Johtajan ja alaisen suhde perustuu perinteisissä menetelmissä sopimukseen, jossa alaiselle on määritetty tehtävä ja hän saa korvauksen suoritettuaan tehtävänsä~\cite{thite2000leadership}. Johtajan tehtävänä on ollut kontrolloida, suunnitella ja tarkasella tuotantoprosessin toimivuutta~\cite{palmer2001emotional}. 
+
+Johtaminen on muuttunut viimeisten vuosikymmenien aikana. Teollisuus on muuttunut enemmän palveluorientoituneeksi ja samallla johtajan tehtävät ovat muuttuneet. Johtajan tehtäviksi ovat muodostuneet työntekijöiden motivaation kasvattaminen ja inspiraation lisääminen työryhmän keskuudessa~\cite{palmer2001emotional}.  Ohjelmistotuotantoprojekteissa tähän muutokseen on vaikuttanut uusien menetelmien yleistyminen. Ketterissä menetelmissä johtaminen perustuu yhteistyölle ja johtajuudelle~\cite{Nerur:2005:CMA:1060710.1060712}. 
+
+Johtajuuteen ja johtamiseen vaikuttavat johtavien henkilöiden persoonallisuudet. Ohjelmistotuotantoprojektien kehitysmenetelmien muutos on vaikuttanut johtamistyylien muuttumiseen ja kehittymiseen ohjelmistotuotannossa. Tässä tutkielmassa tarkastellaan ohjelmistotuotantoprojektien johtamista sekä johtajan persoonan ja johtamistyylin vaikutusta ohjelmistotuotantoprojekteihin ja ohjelmistotuotantoprojektien onnistumiseen.
+
+Tutkielma koostuu kolmesta luvusta. Ensimmäisessä luvussa käsitellään ketterien menetelmien ja johtajuuden käsitteistöä. Luvussa tarkastellaan myös kuinka kehitysmenetelmien muutos on vaikuttanut ohjelmistotuotantoprojektien johtamiseen. Toisessa luvussa paneudutaan ohjelmistotuotantoprojektien johtamiseen vaikuttaviin tekijöihin, kuten projektiryhmän johtaminen, ylemmän hallinnon vaikutus, ryhmän kokoaminen ja muutoksen toteuttaminen. Kahdessa ensimmäisessä luvussa luodaan perusta, jonka pohjalta kolmannessa luvussa tarkastellaan johtajan persoonallisuutta ja johtamistavan vaikutusta eri projektin vaiheissa. Käsittelyssä ovat erilaiset menetelmät, joiden avulla projektin johtajalla on mahdollisuus tunnistaa erilaiset persoonallisuuden piirteet, jotka vaikuttavat johtamiseen.  
+
+\section{Ketterät menetelmät ja johtaminen}
+
+Tässä luvussa tutustutaan tutkielmassa käsiteltäviin aihepiireihin. Ensimmäiseksi käsitellään ketteriä mentetelmiä ja menetelmien perusideoita. Samalla luodaan katsaus scrumin ja XP:n käytäntöihin. Luvun jälkimmäinen osa selventää mitä johtaminen on tämän tutkielman näkökulmasta.  
+
+
+\subsection{Ketterien menetelmien perusteita}
+
+Ketterät menetelmät (agile methodologies) on kokoelma erilaisia kehitysmenetelmiä, joiden ideologia perustuu "Ketterän manifestin" ajatuksiin~\cite{fowler2001agile}. Menetelmien lähtökohtana on pyrkiä mahdollisimman hyvään asiakastyytyväisyyteen. Tavoitteen saavuttamiseksi ohjelmistosta pyritään tarjoamaan asiakkaalle toimiva versio mahdollisimman nopeasti ja mahdollisimman usein kehityksen aikana~\cite{fowler2001agile}.
+
+Ketterät menetelmät perustuvat iteratiiviseen kehitykseen, jossa kehitystä tehdään pyrähdyksissä~\cite{cohen2004introduction}. Pyrähdyksen jälkeen tarkastellaan tuotosta ja päätetään, mitä seuraavassa pyrähdyksessä toteutetaan. Samalla myös tarkastellaan kehitysprosessin toimivuutta ja prosessia voidaan muuttaa parempaan suuntaan~\cite{cohen2004introduction}.
+
+Manifesti on syntynyt vuonna 2001 17 tunnetun ohjelmistoalan ammattilaisen tapaamisessa. Ryhmän jäsenten tarkoitus oli löytää yhteinen käsitys uusista menetelmistä, joita ohjelmistojen kehitykseen oli syntynyt. Ketteriksi menetelmiksi voidaan lukea muun muassa Extreme programing(XP), scrum, Crystal ja Feature-Driven development~\cite{fowler2001agile}. Tutkielmassa ketteristä menetelmistä käsitellään tarkemmin johtamista XP- ja scrum-menetelmissä.
+
+Ketterät menetelmät kuten XP ja scrum perustavat työskentelyn ryh\-mä\-työl\-le~\cite{4755768}. Ryhmätyöskentelyssä oleellisessa roolissa on, kuinka ihmiset toimivat yhteistyössä keskenään. Ryhmätyöskentely koetaan usein tehokkaaksi tavaksi totetuttaa monimutkaisi projekteja. Ohjelmistotuotantoprojektit voidaan lukea monimutkaisten projektien kategoriaan. 
+
+Scrum-menetelmän periaatteet esiteltiin ensimmäisen kerran 1986. Periaateet esitteli Hirotaka Takeuchi ja Ikujiro Nonaka artikkelissaan "The New New Product Development Game"~\cite{nonaka1986new}. Scrumissa johtaminen jakautuu virallisesti kahdelle henkilölle. Ryhmää johtavilla henkilöillä on erilaiset nimitykset tehtävänsä mukaan, scrummaster ja tuoteomistaja (product owner)~\cite{4755768}. Scrummasterin rooliin liittyviä tehtäviä ovat ryhmän kokoaminen, osallistuminen päätöksentekoon ryhmän osana ja työrauhan luominen scrumryhmälle~\cite{4755768}. Johtajien rooleihin paneudutaan tarkemmin seuraavassa luvussa.
+
+Scrumissa ryhmän kooksi on määritelty 1-7 henkilöä ja pyrähdyksen pituudeksi on määritetty 40 päivää~\cite{cohen2004introduction}. Artikkelissaan Schwaber ilmoittaa yhden scrumryhmän kooksi 3-6 henkilöä ja pyrähdyksen pituudeksi 1-4 viikkoa~\cite{schwaber1995scrum}. Scrumissa kehitysryhmä on näiden lähteiden perusteella suhteellisen pieni koostuessan alle kymmenestä henkilöstä. Lähteiden poikkeavuutta voidaan selittää menetelmän kehittymisellä, joka on olennainen osa ketterää kehitystä~\cite{fowler2001agile}. Scrummasterin ja tuoteomistajan lisäksi ryhmästä löytyy useita rooleja: testaaja, kehittäjä ja dokumentoija~\cite{schwaber1995scrum}.
+
+Tutkielmassa tutkitaan johtamista myös toisen ketterän menetelmän näkökulmasta. Extreme Programing (XP) on kehittänyt Kenet Beck, joka artikkelissaan "Embracing change with extreme programming" esittelee menetelmän ideologiaa ja periaatteita~\cite{796139}. XP:ssä ohjeet toiminnalle ovat tarkemmat kuin scrumissa, mutta menetelmän periaatteen mukaan ne ovat vain sääntöjä~\cite{cohen2004introduction}. Ryhmällä on oikeus muuttaa sääntöjään parantaakseen prosessia~\cite{cohen2004introduction}. Tästä muutoksesta ja muutoksen toteuttamisesta puhutaan myöhemmin tässä tutkielmassa. 
+
+Projektiryhmän työskentelytila on XP:ssä avoin, missä keskellä tilaa ovat tietokoneet, joilla ohjelmointi toteutetaan. Ohjelmointi toteutetaan pariohjelmointina. Jokaisella parilla on vain yksi näyttö, näppäimistö ja hiiri. Ohjelman osien kehitystä ei ole osoitettu tietyille henkilöille vaan jokaisella ryhmän jäsenellä on oikeus muuttaa ohjelman kaikkia osa-alueita. XP:ssä testauksen tärkeyttä osana onnistunutta projektia korostetaan. Asiakas osallistuu projektiin täyspäiväisesti eli on osa kehitysryhmää~\cite{796139}. XP:ssä ryhmän koko on 2-10 henkilöä ja pyrähdyksen pituus on 2 viikkoa~\cite{cohen2004introduction}. 
+
+\subsection{Mitä johtaminen on?}
+
+Johtaminen on käsitteenä hyvin laaja ja johtaminen on aina tilanteeseensa sidottua. Tutkimuksissa johtamisesta puhutaan monin eri käsittein ja jokaisen suuntauksen käsitteleminen ei ole tässä tutkielmassa aiheellista. Tässä osassa pyrin selventämään johtamisen käsitteistöä, jonka vaikutusta johtajan persoonallisuuteen tulen tarkastelemaan myöhemmin tutkielmassa. 
+
+Johtamista esiintyy ryhmätilanteissa ja yleisemmin tilanteissa joissa ihmiset vaikuttava toistensa toimintaan. Tässä tutkielmassa johtamista käsitellään kahdesta näkökulmasta. Hallinta (managment) tarkoittaa johtamiseen liitettäviä käsitteitä kuten, suunnitelu, organisointi, henkilöstöhallinta, ohjaus ja organisaation kontrollointi. Johtajuus (leadership) tarkoittaa prosessia jonka avulla henkilö voi tukea ja auttaa muita, jotta yhteinen tavoite saavutetaan.
+
+Johtaessaan ryhmäänsä syntyy johtajalle seuraajia. Johtaja ei voi pakottaa alaisiaan seuraajikseen vaan johtajan tulee luoda visio, jonka takia alaiset tahtovat johtajaansa seurata~\cite{raccoon2006leadership}. Kaikista työryhmän henkilöistä ei välttämättä tule johtajansa seuraajia vaan johtajan ja alaisen suhde voi säilyä hallinnallisella tasolla~\cite{raccoon2006leadership}. Projektista vastaava henkilö ei ole johtaja, jollei hänellä ole seuraajia. 
+
+Hallinnan ja johtamisen suurena erona voidaan pitää niiden suuntaa. Hallinta on ylhäältä alaspäin suuntautunutta~\cite{raccoon2006leadership}. Johtaminen taas on alhaalta ylöspäin suuntaunutta~\cite{raccoon2006leadership}. Johtamisessa seuraajat tarvitsevat johtajaansa kun hallinassa ylemmän tason johtajat tarvitsevat alemman tason johtajiaan~\cite{raccoon2006leadership}. 
+
+Johtajuus voidaan jakaa kahteen erilaiseen tapaan johtaa. Johtajan auktoriteetti ja johtaminen voi perustua transaktiohin johtajan ja työntekijän välillä~\cite{bass1990transactional}. Tätä johtamista kutsutaan tutkielmassa transaktiojohtamiseksi(transactional leadership). Toisessa johtamis tavassa johtaja pyrkii innostamaan ja luomaan avoimmuutta työntekijöiden keskuudessa, jotta työntekijät toimivat ryhmän hyväksi eivätkä omaksi edukseen~\cite{bass1990transactional}. Johtamistavasta käytän nimitystä uudistava johtaminen (transformational leadership). 
+
+Transaktio johtamisessa suhde työntekijän ja johtajan välillä  perustuu sopimukseen~\cite{bass1990transactional}. Sopimuksessa määritellään työntekijän tehtävät, jotta hän ansaitsee hänelle tarkoitetun palkkion. Työntekijän toiminta perustuu luvattuihin palkintoihin, joita saa hyvin suoritetusta työstä tai sanktiohin, joita työntekijä saa poiketessaan annetuista ohjeistaan~\cite{bass1990transactional}. Transaktiojohtaminen voi onnistua, jos johtajalla on mahdollisuus tarjota palkkioita, joilla on merkitystä seuraajilleen~\cite{bass1990transactional}. 
+
+Transaktio johtamisessassa esimiehen ja alaisen suhde ei perustu johtaja-seuraaja suhteeseen. Transaktio johtaminen on yleisempää hallinon tasolla, mutta myös hallinnossa johtamisesta tulee tehokkaampaa, kun esimiehet saavat alaisistaan seuraajia.  
+
+Uudistavassa johtamisessa johtajan täytyy saavuttaa alaisensa luottamus persoonallisuutensa ja toimintansa avulla. Luottamuksen syntymiseen vaikuttavat johtajan karisma, kyky huomioda alaisten emotianaaliset tarpeet ja kyky älyllisesti stimuloida alaisiaan~\cite{bass1990transactional}. Karisamaattinen johtaja inspiroi alaisiaan siten, että alaiset saavuttavat suuria saavutuksia pienellä panostuksella työhönsä~\cite{bass1990transactional}.
+
+Uudistava johtaja kykenee huomiomaan alaistensa emotianaaliset tarpeet. Johtajalla on kyky käsitellä alaistensa erilaiset tarpeet ja samalla mahdollistaa alaisilleen parempi tunne työn tekemisestä~\cite{palmer2001emotional}. Huomiomalla alaisensa ihmisinä saavuttaa uudistava johtaja todennäköisesti johtaja-seuraaja suhteen, joka tehostaa johtamista~\cite{raccoon2006leadership}.
+
+Uudistava johtaminen koetaan nykyään tehokkaammaksi kuin transaktio johtaminen~\cite{palmer2001emotional}. Tämän suuntainenen vaikutus on havaittu useissa eri yhteyksissä, joissa johtamista esiintyy esimerkkinä mainittakoon uskonnolliset yhteisöt~\cite{bass1990transactional}. Kun johtaja on uudistavajohtaja, hänen alaisensa eivät vain työskentele tehokkaamin. Alaiset ovat tyytyväisiä organisaation  Uudistavan johtamisen olettaisi sopivan myös ohjelmistotuotantoprojektin johtamiseen kun käytössä ovat ketterät menetelmät. Myöhemmin tässä tutkielmassa pyrin löytämään tukea olettamukselle tieteellisestä tutkimuksesta. 
+   
+
+
+
+  
+
+
+\section{Johtajuus ohjelmistotuotantoprojekteissa}
+
+Ohjelmistotuotanto projektiin vaikuttavat johtajat organisaation eri tasoilta. Ketterässä kehityksessä kehitysryhmät ovat usein itsestään organisoituvia ja periaatteisiin kuuluu että ryhmän johtajan tulee luottaa kehitysryhmän tietoihin ja taitoihin~\cite{fowler2001agile}. Luvussa tutustutaan tutkimukseen, jota on suoritettu ohjelmistotuotantoprojektien johtamiseen liittyen. Käsittelyssä ovat kehitysryhmän johtaminen ja ylemmän organisaation vaikutus johtamiseen ja ryhmän toimintaan. Luvun lopussa käsitellään ohjelmistotuotantoprojektin kannalta kahta tärkeää osa-aluetta: kehitysryhmän kokoaminen ja riskien hallinta. Riskien hallintaa tutkitaan kahdelta kannalta. Kuinka reagoida riskeihin ja mitä työkaluja siihen voidaan käyttää. Toinen puoli riskien hallinnasta on muutosjohtaminen, joka sisältää koko prosessiin liittyvän muutoksen.
+
+\subsection{Kehitysryhmän johtaminen}
+
+Ohjelmistotuotantoprojekteissa johtajan tehtävänä on motivoida muita. Johtajan tehtäviin voidaan lukea esimerkiksi organisointi, innovointi, arviointi ja lopputuotteen onnistumisesta vastaaminen~\cite{4017705}. Johtajien tehtäviin voidaan lukea myös resurssien hallinta ja projektin aikataulutus ~\cite{Dhomne:2012:ITL:2382887.2382899}. Projektin johtajan yhtenä tehtävänä voidaan pitää välikätenä toimimista ryhmän ja ulkoisten osallistujien välillä~\cite{McLeod:2011:FAS:1978802.1978803}. Projektin johtajan ammattitaidolla ja projektin johtamisessa käytettävillä työkaluilla on suuri vaikutus ohjelmistotuotantoprojektin tuloksellisuuteen~\cite{McLeod:2011:FAS:1978802.1978803}. Tehoton johtaja sabotoi kehitysryhmän tuottavuutta~\cite{bradley1997effect}.
+
+Ketterissä menetelmissä johtajan valtaa on siirretty johtajalta ryhmällä ja johtaminen on muuttunut yhteistyön suuntaan kontrollointi johtamisesta~\cite{Nerur:2005:CMA:1060710.1060712}. scrumissa projektiryhmänjohtajan nimitys on muutettu scrummasteriksi. Scrummasterin tehtävänä on suunnitella ryhmä ja ryhmälle rajat~\cite{4755768}. Scrumissa johtaminen on myös jeattu tuotteenomistajalle (product owner), jonka tehtävänä on vastata projektin hallinnasta, product backlogista ja projektin kontrolloinnista~\cite{4755768}. Scrum masterin tulee johtaa ryhmän palavereita niin, että jokainen ryhmänjäsen pääsee osallistumaan ryhmän toimintaan, jotta yhteisymmärrys tilanteissa saavutetaan~\cite{bradley1997effect}. 
+
+Product backlog on lista toteutettavista ominaisuuksista, josta vastaa product owner. Product backlog on työkalu jonka avulla product owner voi vaikuttaa projektin etenemiseen. Listasta kehitys ryhmä valitsee toteutettavat asiat ennen pyrähdyksen alkua. Ryhmä valitsee tuoteomistajan tärkeimmäksi arvioimat vaatimukset, jotka ryhmä toteuttaa pyrähdyksen aikana. Muuttamalla prioriteetti järjestystä product backlogissa pystyy tuoteomistaja vaikuttakaan projektin tuotekehitykseen. Scrummasterin tehtäviin kuuluu avustaa tuoteomistajaa product backlogin ylläpidossa~\cite{Nerur:2005:CMA:1060710.1060712}. Tutkimuksen mukaan teknisesti taitava tuoteomistaja saattaa olla haitaksi kehitysryhmän toiminnalle~\cite{Nerur:2005:CMA:1060710.1060712}. Liian tarkaksi muotoillut toiminnallisuuksien kuvaukset product backlogissa voivat johtaa ryhmän tehokkuuden heikkenemiseen~\cite{Nerur:2005:CMA:1060710.1060712}.
+
+Ketterät menetelmät korostavat kehitysryhmän merkitystä projekteissa. Scrumissa ryhmän sisäiseen johtamiseen liittyy oleellisesti kaksi käsitettä itse organisoituvat ryhmät ja jaettu johtaminen~\cite{4755768}. Itseorganisoitumisella tarkoitetaan ryhmän sisäistä tehtävänjakoa. Ulkopuolisten tekijöiden vaikutus ryhmän toimintaan ja päätöksen tekoon pyrähdyksen aikana pyritään minimoimaan. Itseorganisoituminen ei tarkoita tilannetta, jossa projektiryhmää ei kontrolloida lainkaan vaan ylemmän hallinnon tulee asettaa ryhmälle välietappeja, joiden avulla ryhmän edistymistä voidaan seurata~\cite{Nerur:2005:CMA:1060710.1060712}. Scrumissa välietappeja ovat pyräshdysten lopuksi pidettävät pyräshdys katselmukset, joissa tuoteomistaja saa käsityksen, mitä pyrähdyksen aikana on toteutettu~\cite{schwaber1995scrum}.
+
+Scrumryhmissä johtamisen tulisi olla jaettua. Päätöksenteko tilanteissa johtajana tulisi toimia henkilön, jolla on käsiteltävästä aihealueesta paras asiantuntemus~\cite{4755768}. Jaettu johtaminen vaatii ryhmän jäseniltä kykyä huomioda eilaisten ihmisten vaikutusta päätöksiin. Jotta jaettu johtaminen olisi tehokasta, tulee ryhmän toiminnassa korostua oppimisen ilmapiiri~\cite{4755768}. Jatkuvan kouluttamisen kautta projektin johtajat pystyvät kehittämään projektiin osallistuvien kehittäjien tietoja ja taitoja~\cite{dall2004project}.
+
+Tehokas ja toimiva ryhmä on olennainen osa onnistunutta projektia. Projektin johtajalla on mahdollisuus vaikuttaa ryhmän muodostamiseen ja mahdollisuus parantaa ryhmän koheesiota. Parempi ryhmäkoheesio vaikuttaa positiivisesti ryhmän tuotoksellisuuteen~\cite{bahli2005group, McLeod:2011:FAS:1978802.1978803}. Ryhmän toimintaan vaikuttavia tekijöitä, jotka tekevät ryhmästä toimivan ovat yhteinen tavoite, avoin kommunikaatio, nopeat ja rakentavat konfliktien ratkaisut, yleinen luottamus, uskominen synergiaan, avustaminen, kunnioitus ja hyvä johtaja~\cite{4017705}. Vaikka ryhmällä olisi hyvä koheesio voi ryhmä ajautua silti konflikteihin. Hyvä koheesio ryhmässä auttaa nopeaan konfliktien ratkaisuun~\cite{bradley1997effect}. Ristiriita tilanteista selvitään ilman kenenkään loukkaantumista kun ryhmä tukee toisiaan~\cite{bradley1997effect}.
+
+XP:ssa johtajan roolia ei ole määritetty. XP on enemmänkin kehitysryhmän sisäinen yksinkertainen säännöstä, kuinka toimitaan tai kuinka tulisi toimia, jotta kehitys onnistuisi tehokkaasti~\cite{Augustine:2005:APM:1101779.1101781}. XP voidaankin pitää ohjelmistontuotanto metodologiana eikä niinkään ohjelmiston tuottamisen hallinta metodologiana~\cite{cohen2004introduction}. Ryhmänjohtajan kannalta on tärkeää seurata, kuinka XP periaatteet toteutuvat ryhmän toiminnassa. Johtajan tehtävänä on XP projekteissa poistaa mahdolliset esteet XP:n periaatteiden toimimiselle projekteissa~\cite{Augustine:2005:APM:1101779.1101781}.
+
+
+
+
+\subsection{Ylemmän hallinnon vaikutus}
+
+Ohjelmsitotuotanprojektiryhmä on osa suurempaa organisaatiota, jonka alaisena projekti toimii. Organisaation ylemmällä hallinnolla on vaikutusta ohjelmistotuotantoprojekti johtamiseen ja ohjelmistotuotantoprojektin tuloksellisuuteen. Ylemmänhallinnon tulee huomioda johtamisessaan monia tekijöitä joiden avulla ylempihallinto voi vaikuttaa projektin tuloksellisuuteen. Organisaation ylemmällä hallinnolla tarkoitetaan organisaation hallitusta ja toimitusjohtajaa, joiden vastuulla on koko organisaation strateginen suunta~\cite{McLeod:2011:FAS:1978802.1978803}.
+
+Ylempihallinto vaikuttaa ohjelmistotuotantoprojektin budjettiin ja aikatauluun~\cite{McLeod:2011:FAS:1978802.1978803}. Kiireellinen aikataulu ja tiukka budjetti ovat syitä ohjelmistotuotantoprojektin epäonnistumiselle. Seamanin ja Goun tutkimuksessa ~\cite{Guo:2008:SSP:1414004.1414046} projektin johtajat ilmoittivat aikataulun ja budjetin kolmen tärkeimmän syyn joukkoon prosessin muutokselle kesken projektin.
+
+Organisaation ylempi hallinto tarjoaa projektin johtajalle käyttöön tietyt henkilöstöresurssit. Projektin johtaja joutuu valitsemaan kehitysryhmän ylemmän organisaation tarjoamista kehittäjistä. Projektin kehitysryhmästä tulee harvoin optimaalinen henkilöstön osalta~\cite{Dhomne:2012:ITL:2382887.2382899}. Asiakkaan osallistumiseen ja aktiivisuuteen projektissa on ylemmällä hallinnolla vaikutusta~\cite{McLeod:2011:FAS:1978802.1978803}.
+
+Organisaatiolla on usein vakiintuneet kehitysmenetelmät, joita organisaatiossa käytetään~\cite{McLeod:2011:FAS:1978802.1978803}. Asennoituminen työntekijöihin ja työntekijöiden asennoitumiseen työhön vaikuttaa organisaation yleinen ilmapiiri ja samalla heikko johtaminen ylemmältä tasolta vaikuttaa myös kehitysryhmään ja kehitysryhmän johtamiseen.
+
+Organisaation ylempi johto voi asettaa rangaistus menetelmiä joiden avulla hallita tuotettavien ohjelmistojen laatua. Yleinen käsitys rangaistuksista on että ne laskevat kehittäjien motivaatiota. Wang ja Zhang kirjoittavat tutkimuksessaan ~\cite{Wang:2010:PPP:1810295.1810302} että rangaistus politiikka voi tehostaa ohjelmistotuotantoprojektin toimintaa ja tuotteen laatua. Wang ja Zhang antavat johtajalle kolme ohjetta joiden avulla rangaistuksista saadaan toimivia. Rangaistus politiikan tulee olla oikeudenmukaista ja hyvin suunniteltua. Ohjeistus on tärkeää. Kehittäjät tulee saada uskomaan että menetelmän tarkoituksena ei ole säästää rahaa pienentämällä palkkoja vaan saada kehittäjistä motivoituneempia. Kolmas ja tutkijoiden mielestä hyvin oleellinen sääntö on, että rangaistus ei saa ylittää tiettyä osuutta kehittäjien palkasta. Esimerkiksi maksimirangaistus viisi prosenttia kuukausipalkasta.
+
+
+
+\subsection{Ryhmän kokoaminen}
+
+
+Ohjelmistotuotantoprojektin johtamisen onnistumisessa tärkeässä roolissa on projektin alussa tapahtuva ryhmän kokoaminen. Ryhmän kokoamiseen vaikuttavat monet seikat, joita johtajan tulisi ottaa huomioon kootessaan ryhmäänsä. Ryhmän kokoamisella ja perusteilla, joita ryhmän kokoajan käyttää on suuri merkitys projektin onnistumiselle~\cite{daSilva2012}. Projektin johtajan tulee huomioida projektiryhmän koko muodostaessaan ryhmää. Projekti ryhmän koko voi määräytyä ylemmän organisaation puolelta~\cite{McLeod:2011:FAS:1978802.1978803}. Projektiryhmä joka koostuu suuresta kehittäjä joukosta koetaan riski tekijäksi projektin kannalta~\cite{McLeod:2011:FAS:1978802.1978803}. Ketterissä menetelmissä jos ryhmän koko on suuri esimerkiksi 15 henkilöä voi projektijohtaja jakaa ryhmän pienempiin osa ryhmiin, jotta kehittämisestä tulee tehokkaampaa~\cite{Augustine:2005:APM:1101779.1101781}. Projektiryhmän koon lisäksi johtajan tulee huomioida ryhmäläisten kokemus aiemmasta keskinäisestä toiminnasta. Ihmiset, jotka eivät ole toimineet ennen yhdessä koetaan ryhmän kannalta riskitekiijöiksi~\cite{McLeod:2011:FAS:1978802.1978803}.
+
+Da Silva ja kumppanit tutkivat projektiryhmän kokoajien syitä henkilöiden valinnalle ja niiden vaikutusta ohjelmistotuotantoprojektin onnistumiseen~\cite{daSilva2012}~\cite{francca2009quantitative}. Ohjelmistotuotantoprojekteissa ryhmän kokoamisesta vastaa usein projektipäällikkö tai henkilöstöhallinnosta vastaava henkilö. Käytän projektin kokoajasta nimitystä projektipäällikkö. Tutkimuksensa ensimmäisessä vaiheessa da Silva ja kumppanit tutkivat kahdeksaa kriteeriä joiden perusteella projektipäälliköt valitsevat henkilöitä projekteihinsa~\cite{francca2009quantitative}. Myöhemmässä tutkimuksessa he kasvattivat kriteereiden määrä kymmeneen~\cite{daSilva2012}. Kymmenen kriteeriä joiden vaikutusta henkilöstön valinnassa projektipäälliköt käyttävät ovat persoona, käyttäytyminen, tekninen profiili, asiakkaan tärkeys, tuotoksellisuus, käytettävyys, yksilön hinta projektille, projektin tärkeys, suositukset ja tehtävään sopivuus. Tarkemmat kuvaukset kriteereistä voi lukea da Silvan ja kumppaneiden tutkimuksesta~\cite{daSilva2012}.
+
+Tutkimuksessaan da Silva ja kumppanit huomasivat että johtajat painottivat valinta kriteereissään teknistä profiilia ja projektin tärkeyttä. Tutkimuksessa kuitenkin huomattiin että suurin vaikutus projektin onnistumiseen oli persoonallisuudella ja käyttäytymisellä~\cite{daSilva2012}. Projektipäälliköt käyttävät usein entuudestaan tuttuja tapoja henkilöiden valitsemiseen. Osaamisen ja tiedon puute vaikuttavat inhimillisten tekijöiden käyttämiseen valintaprosessissa. Ohjelmistoyritysten tulisi huomioida inhimillisten tekijöiden vaikutus ja kouluttaa johtajiaan huomioimaan henkilöresurssit~\cite{daSilva2012}.
+
+Rakentaessaan tehokasta ryhmää tulee projektipäällikön huomioida tärkeiksi todettuja tehokkaaseen ryhmään vaikuttavia tekijöitä. Bradley ja Hebert listaavat tekijöiksi artikkelissaan tehokkaan johtajuuden, ryhmän sisäinen kommunikaatio, ryhmän koheesio ja ryhmäläisten persoonallisuuden heterogeenisyys~\cite{bradley1997effect}. Ryhmän kokoamis vaiheessa johtaja voi huomioida ryhmäläisten persoonallisuuden ja pyrkiä löytämään ryhmäänsä erilaisia persoonallisuuksia. Kun ihmisillä on erilaisia tietoja taitoja on todennäköisempää että monimutkaiset ohjelmistot onnistuvat tavoitteissaan~\cite{bradley1997effect}.
+
+Löytääkseen oikeat henkilöt oikeaan paikkaan voi ohjelmistotuotantoprojektien johtaja voi käyttää apunaan "I Opt" menetelmää ~\cite{Dhomne:2012:ITL:2382887.2382899}. I Opt-menetelmä on esitelty tarkemmin artikkelissa~\cite{ kliem1996teambuilding}. Menetelmässä ryhmän jäsenet arvioidaan kyselyn perusteella. Jokainen ryhmäläinen asetetaan luokkaan tyylinsä mukaan. Nämä neljä luokkaa ovat toimintaan suuntautunut, looginen prosessoija, analysoija ja innovoija~\cite{ kliem1996teambuilding}. Johtajan ja ryhmän valinta olisi optimaalista jos jokaiseen tehtävään voitaisiin valita tehtävätyyppiin sopivimmat henkilöt~\cite{Dhomne:2012:ITL:2382887.2382899}.
+
+Ryhmää kootessaan projektinjohtajalle on höytyä tunnistaa erilaiset persoonallisuustyypit, jotka hän valitsee projektiin. I Opt menetelmän rinnalla toinen menetelmä arvioida henkilöiden persoonallisuuksia on MBTI (Myers Briggs Type Indicator)~\cite{bradley1997effect}. MBTI menetelmästä ja sen käytöstä voi lukea tarkemmin artikkelista~\cite{myers1985manual}. Menetelmässä henkilöä arvioidaan neljän tyypin perusteella. Henkilö on joko ulospäinsuuntautunut tai sisäänpäinsuuntautunut. Henkilö perustaa päätöksensä joko järkeen tai intuitioon. Henkilö päättää, joko ajatuksillaan tai tunteillaan. Henkilö pyrkii löytämään useita näkökantoja tai keskittyy pysymään aikataulussa. Näistä ominaisuuksista saadaan muodostettua 16 erilaista profiilia henkilöille. Johtajan on hyvä huomioida se että jokainen näistä kombinaatiosta voi olla hyödyllinen projektille riippuen projektiryhmän kokonaisuudesta~\cite{bradley1997effect}. Bradleyn ja Herbertin tutkimus, jossa he käyttivät MBTI:tä selvittääkseen persoonallisuuden vaikutusta koski JAD (join application design) menetelmään jossa huomioidaan käyttäjän osallistuminen projektiin joka vaiheessa~\cite{bradley1997effect}. Tarkempi kuvaus JAD:sta löytyy artikkelista~\cite{Davidson1999215}
+
+Ketterissä menetelmissä ryhmän kokoamisen merkitys ei ole yhtä suuri verrattuna perinteisiin menetelmiin esimerkiksi vesiputousmalliin~\cite{daSilva2012}. Da Silvan ja kumppaneiden mielestä tämä voi johtua ketterien menetelmien joustavuudesta. Ketterillä ryhmillä on usein kyky muuttua ja samalla ryhmästä muotoutuu tehokkaampi. Toisaalta da Silva ja kumppanit mainitsevat että jos edellä mainittu olettamus ketteristä menetelmistä pitää paikkansa tulee ryhmän jäsenillä olla inhimillisiä kykyjä~\cite{daSilva2012}.
+
+
+\subsection{Muutos johtaminen ja riskienhallinta}
+
+Ohjelmistotuotanprojektien johtamisessa suuressa roolissa ovat riskien hallinta ja muutoksen hallinta. Usein tutkimuksessa puhutaan riskien hallinnasta. Artikkelissaan ~\cite{4017705} Debnath ja kumppanit uudelleen kuvaavat riskien hallinnan ongelmat, muutoksen hallinnaksi ja projektin johtamiseksi. Heidän näkemyksensä mukaan 85 prosenttia ohjelmistotuotantoprojektien riskeistä liittyvät projektin ympäristön muutoksiin~\cite{4017705}. Projektin johtajalla on mahdollisuus vaikuttaa nopealla reagoinnillaan muutoksen hyödyllisyyteen~\cite{4017705}. Debnathin ja kumppaneiden mielestä riskit eivät ole vain riskejä vaan myös mahdollisuuksia kehittää prosessia~\cite{4017705}.
+
+Ohjelmistotuontaprojektien riskit voidaan jakaa erilaisiin luokituksiin. Fan ja Yu luokittelevat riskit organisaatio ja projekti sidonnaisiin riskeihin~\cite{fan2004bbn}. Fan ja Yu esittelevät mallin, joka perustuu Bayesian Belief Networks malliin, jota projektin johtajat voivat käyttää päätöksen tekonsa tukena riskien hallinnassa~\cite{fan2004bbn}. Bayesian Belief Networks mallia pidetään parhaaksi koettuna ratkaisuna riskien hallinnassa~\cite{szHokeproject}. Szöke esittelee artikkelissaa Bayesian Belief Network mallin joka on yhdistetty EMF (Eclipse Modeling Framework) mallinnus työkaluun, jonka avulla johtajat saavat kerätyn metriikan näkyväksi Bayesian Belief Malliin~\cite{szHokeproject}. Tämän avulla johtajilla on mahdollisuus reagoida nopeasti riskeihin ja samalla ratkaisut perustuvat kvalitatiiviseen aineistoon~\cite{szHokeproject}.
+
+Muutoksen hallinnalla ja muutosjohtamisella voidaan tarkoittaa riskien hallinnan lisäksi koko prosessiin liittyvän muutoksen hallintaa ja johtamista. Prosessin muutoksiin on vaikuttanut ketterien menetelmien yleistyminen ja projektien siirtyminen perinteisestä vesiputousmallista ketteriin menetelmiin. Päättäessään muutokseen ryhtymisestä ei johtajana pidä painottaa liiaksi projektin luontoa, projekti tyyppiä tai projektin aikataulua~\cite{Chow2008961}. Gou ja Seaman tutkivat syitä, jotka johtivat projektipäälliköt valitsemaan muutoksen vanhasta menetelmästä uuteen~\cite{Guo:2008:SSP:1414004.1414046}. Heidän tuloksensa osoitti että suurimmat syyt prosessin muuttamiselle ovat laatu, hinta ja aikataulu~\cite{Guo:2008:SSP:1414004.1414046}.
+
+Mitä tietoja ja todisteita ohjelmistotuotantoprojektin johtajat tahtovat tehdessään muutosta kehitysprosessiin? Tutkimuksessaan Gou ja Seaman huomasivat, että tiedot joita johtaja olisivat halunneet erosivat tiedoista joita johtaja todellisuudessa olivat saaneet ryhtyessään muutokseen. Molemmissa tilanteissa johtajan päätökseen eniten vaikuttavat luotettavan kollegan kokemus uudesta menetelmästä~\cite{Guo:2008:SSP:1414004.1414046}. Johtajat olisivat tahtoneet perustaa tietämyksensä akateemiseen tutkimukseen mutta todellisuudessa akateemisen tiedon vaikutus oli vähäisempää~\cite{Guo:2008:SSP:1414004.1414046}.
+
+Kuinka muutoksen saa tehtyä toimivassa projekti ryhmässä ja organisaatiossa? Depnath ja kumppanit esittelevät artikkelissaan ~\cite{4017705} menetelmän joka perustuu Kotterin malliin~\cite{kotter1995leading}. Esitellyssä mallissa muutoksen johtaminen jaetaan kolmeen osaan, jotka voidaan jakaa vielä pienempiin osiin. Ensimmäisessä vaiheessa johtajan tulee sulattaa tämän hetkinen tilanne. Johtajalla tulee olla syy, jonka takia tulevaisuudessa toimitaan eritavalla~\cite{4017705}. Kotterin mukaan jopa 50% muutoksen yrityksistä epäonnistuu jo tässä vaiheessa~\cite{kotter1995leading}. Toisessa vaiheessa johtajan tulee suorittaa toimet jotka johtavat muutokseen~\cite{4017705}. Muutoksen toteuttamisessa tärkeätä on luoda visio tulevasta johon muiden henkilöiden on helppo tukeutua~\cite{4017705}. Johtaja ei voi yksinään ajaa omaa näkemystään läpi vaan johtajan tulee hankkia tukea muiden joukosta~\cite{4017705}. Mallin kolmas vaihe on muutoksen tekeminen pysyväksi~\cite{4017705}.
+
+Scrumissa projektilla on mahdollisuus syöksyä kaaokseen. Menetelmässä kaaokseen luisuminen voidaan estää erilaisilla kontrolleilla~\cite{schwaber1995scrum}. Kontrolleina scrumissa toimivat product backlog, parannukset, paketit, muutokset, ongelmat, riskit, ratkaisut~\cite{schwaber1995scrum}. Näiden avulla projektiryhmä pystyy kehittämään sovellustaan pyrähdyksen aikana. Kontrollit uudelleen määritetään katselmuksessa jokaisen pyrähdyksen lopussa~\cite{schwaber1995scrum}.
+
+Parannukset ovat osia product backlogista, jotka toteutetaan seuraavaan julkaisuun~\cite{schwaber1995scrum}. Paketit koostuvat ohjelmiston osista joita tulee muuttaa, jotta product backlogin ominaisuus voidaan toteuttaa~\cite{schwaber1995scrum}. Muutokset ovat muutoksia jotka täytyy tehdä pakettiin, jotta ominaisuus voidaan toteuttaa~\cite{schwaber1995scrum}. Ongelmat ovat tilanteita, jotka syntyvät kun ominaisuutta toteutetaan. Ongelmat tulee ratkaista ennen kuin ominaisuus saadaan liitettyä projektiin~\cite{schwaber1995scrum}. Riskit ovat tilanteita, jotka tarvitsevat jatkuvaa huomiota, jotta projekti voi onnistua~\cite{schwaber1995scrum}. Näiden riskien hallintaa käsiteltiin tässä luvussa aikaisemmin. Ratkaisut ovat ratkaisuja ongelmiin joista syntyy muutoksia projektiin~\cite{schwaber1995scrum}.
+
+XP:ssa on reagoitu valmiiksi muutamiin mahdollisiin riskitilanteisiin ja menetelmän kehittäjä Beck antaa ohjeistusta~\cite{796139}, kuinka toimia kyseisissä ongelmatilanteissa? Ongelmatilanteita voi syntyä kun ryhmä tuotoksellisuus on yliarvioitu, asiakas ei tahdo työskennellä yhteistyössä, henkilöstöön tapahtuu muutoksia kesken projektin, vaatimukset muuttuvat kesken kehityksen~\cite{796139}. Johtalla on suuri rooli näiden ongelmien ratkaisemisessa.
+
+Voiko ryhmä tehostaa toimintaa jotenkin, jotta saavutetaan luvattu taso? Jos tämä ei ole mahdollista pitää asiakkaan kanssa sopia mitä tehdään ja mitä siirretään seuraaviin iteraatiohin. Jos asiakas ei suostu toimimaan yhteistyössä johtajan pitää ensi tutkia omaa ja ryhmänsä toimintaa. Voimmeko me parantaa yhteistyötä jotain kautta? Jos tämä ei onnistu tulee asiasta puhua asiakkaan kanssa. XP:ssä ei ole sallittua ryhmän toimia omien arvailuidensa varassa~\cite{796139}. XP:ssä käytetään pari ohjelmointia, joten yhden henkilön lähteminen ryhmästä ei aiheuta suurta vahinkoa koska aina on toinen henkilö, joka tietää mitä on tehty. Lisäksi laajat testit kertovat oleellista ohjelmiston toiminnasta. Uuden henkilön liittyessä ryhmään hän voi harjoitella kokeneemman henkilön avulla~\cite{796139}. Mahdollisuus muutoksiin reagoimiseen on XP:ssä helppoa koska kehityksessä keskitytään pieniin osiin joista suuremmat kokonaisuudet koostuvat~\cite{796139}. Refaktoroinnin korostaminen kehityksessä helpottaa myös muutoksiin reagointia.   
+ 
+
+\section{Johtajan persoonallisuus}
+
+Ohjemistotuotantoprojekteissa johtajalla on monia mahdollisuuksia vahvistaa käytettävissä olevan ryhmänsä toimintaa. Ryhmä suoritukseen vaikkuttaa johtajan persoona. Johtajan persoonalle hyödyllisiä ominaisuuksia ovat kärsivällisyys, joustavuus, taktikointi, kommunikointitiadot, huumorintaju, auktoriteetti ja tieto. Monet näistä piirteistä vaikuttavat toisiinsa. Tehokaalla projektin johtajalla on kokemusta ja tietämystä käytettävistä tekniikoista ja ihmissuhdetaidoista ~\cite{McLeod:2011:FAS:1978802.1978803}. Johtajan ei tarvitse kuitenkaan olla ryhmästä se henkilö, jolla on paras tuntemus käsiteltävästä asiasta~\cite{4017705}. Johtajan persoonnallisuuden vaikutuksista projektiin on tutkittu vähäisestii~\cite{Wang:2009:PMP:1639950.1640049}. 
+
+
+\subsection{Five Factor personality model ja Mohan Thite's model }
+
+Ihmisen tavat, uskomukset ja asenteet ovat osa ihmisen persoonallisuutta. Ihmisen persoonallisuutta kuvaavia atribuutteja on useita eikä niiden avulla ole helppoa saada todellista kuvaa ihmisen persoonallisuudesta. Eräs tapa tutkia ihmisen persoonaa ja sen vaikutusta on Five Factor Model (FFM)~\cite{barrick2006big}. Tämän menetelmän avulla voidaan kuvata myös johtajaan persoonallisuutta. FFM:ssä jokainen persoonnallisuuden piirre sisällytetään johonkin viidestä laajemmasta tekijästä. Viisi laajempaa tekijää, joita mallissa käytetään ovat avoimmuus, neuroottisuus, miellyttävyys, tunnollisuus ja sosiaalisuus ~\cite{barrick2006big}.
+
+Wang ja Li yhdistivät tutkimuksessaan FFM:nä Mohan Thiten kehittämään malliin jonka avulla voidaan tutkia projektin johtamisen ja projektin onnistumisen välistä sudetta ~\cite{Wang:2009:PMP:1639950.1640049}. Luomansa mallin avulla Wang ja Li tutkivat johtajan persoonallisuuden vaikutusta ohjelmistotuotantoprojektin onnistumiseen. 
+
+Johtajan avoimmuuden on vaikutusta projektin onnistumiseen. Avoimuudella FFM:ssa tarkoitetaan kykyä löytää epätavallisia ideoita, mielikuvituksellisuus, uteliaisuus, emootiot ja seikkailullisuus~\cite{Wang:2009:PMP:1639950.1640049}. Avoimet ihmiset soveltuvat muutosjohtamiseen koska tämän kaltaiset ihmiset ovat valmiita yrittämään uusia asioita. Johtaja, joka ei ole avoin voi ohittaa muuttuvat tekniset vaatimukset ja mahdollisuudet. 
+
+Neuroottisuus kuvastaa useita negatiivisia piirteitä. Näitä piirteitä ovat esimerkiksi viha, levottomuus ja masentuneisuus. Wang ja Li huomasivat että neuroottiset luonteenpiirteet ovat negatiivisesti sidottuina projektin menestymiseen~\cite{Wang:2009:PMP:1639950.1640049}. Neuroottiset henkilöt suhtautuvat usein negatiivisesti työtään kohtaan. Neuroottinen johtaja on näissä tilanteissa usein johtamistyyliltään Laissez-faire tyylinen johtaja.
+
+Johtajan miellyttävyyteen liitetään piirteitä, jotka rakentava ryhmän jäsenten luottamusta johtajaan. Piirteitä ovat esimerkiksi kiltteys, auttavainen, yhteistyökykyinen ja huomaavaisuus~\cite{Wang:2009:PMP:1639950.1640049}. Miellyttävä projektin johtaja rakentaa ryhmän koheesiota. Ryhmä jonka sisäinen koheesio on parempi saavuttaa projektin tavoitteet todennäköisemmin~\cite{bahli2005group}. Wang ja Li saivat samansuuntaisen päätelmän että miellyttävällä johtajalla on positiivinen vaikutus projektin onnistumiseen.
+
+Itsekuri, velvollisuudentuntoisuus ja tavoitteellisuus johtajan piirteinä vaikuttavat projektin tulokseen positiivisesti~\cite{Wang:2009:PMP:1639950.1640049}. Nämä luenteen piirteet kuuluvat FFM:ssä tunnolisuuden tekijän alle. Johtaja toimii esimies asemassa ja samalla alaisilleen esimerkkinä, joka mahdolllisesti korottaa kehittäjäryhmän tuloksellisuutta. 
+
+Sosiaalinen johtaja toimii läheisessä yhteydessä kehittäjäryhmäänsä ja pyrkii luomaan lämpimän suhteen alaisiinsa. Ohjelmistotuotantoprojekteissa johtaja toimii asikkaan ja muiden yhteisyö tahojen kanssa yhteistyössä~\cite{McLeod:2011:FAS:1978802.1978803}, joten sosiaalisella johtajalla on näissä tilanteissa paremmat edellytykset onnistua. Tutkimuksessaan Wang ja Li saivat selville että johtajan sosiaalisuus ja energisyys vaikuttavat positiivisesti  projektin tuloksiini~\cite{Wang:2009:PMP:1639950.1640049}. 
+
+\subsection{Johtamistyylit}
+
+Jokainen projektin johtaja on henkilönä erilainen ja johtajilla on erilaiset johtamistyylit. Johtamistyylejä vaikutusta projektiryhmän rakentamiseen ja projektin tuloksellisuuteen on tutkittu. 
+
+Artikkelissaan ~\cite{Dhomne:2012:ITL:2382887.2382899} Dhomme ja Hall jakavat johtamistyylit päätöksenteko-, aktiivinen johtaminen- ja persoonalliset auktoriteettiset tyylit. Päätöksenteko tyylejä ovat koordinoija, autoritaarinen ja laissez-faire. Aktiivisiin tyyleihin kirjataan valmentava ja tukeva tyyli. Karisma liitetään persoonallisiin auktoriteettisiin tyyleihin. Johtamistyyleistä voidaan puhua vain päätöksentekoon liittyvillä käsitteillä koska valmentava ja tukeva tyyli lukeutuvat koordinoijan osaksi ja karsmaattinen johtaja voi kuulua mihin tahansa päätöksenteon tyyleistä~\cite{Dhomne:2012:ITL:2382887.2382899}. 
+
+Koordinoivan johtajan ryhmässä päätökset syntyvät ryhmnäjäsenten päätöksistä. Johtaja pitää kuitenkin itsellään päätäntä oikeuden ongelmatilanteissa. Johtaja toimii valmentavana henkilönä, joka pyrkii kehittämään ryhmänsä jäseniä ja samalla kannustamaan heitä päätöksentekoon. Johtajan samaistuminen ryhmäläisen asemaan kuuluu koordinoivan tukevan johtajan tyyliin. Koordinoiva johtamistyyli voi olla aikaa tuhlaavaa, joten se ei sovellu nopeita päätöksiä vaativiin tehtäviin~\cite{Dhomne:2012:ITL:2382887.2382899}. Koordinoiva johtamistyyli ja etenkin tukeva tyyli sopivat ketterien menetelmien ideologiaan~\cite{fowler2001agile}. Avoimessa ohjelmistokehityksessä päätökset tehdään usein suuremman yhteisön mielipiteen perusteella ja hyvässä yhteisymmärryksessä~\cite{1385637}, joten johtajalle on hyötyä koordinoivasta johtamistyylisä.
+
+Autoritaarinen johtaja pitää päätökset omissa käsissään. Johtaja voi kysyä ryhmänjäseniltä mielipidettä kysymyksistä mutta päätökset johtaja tekee itse. Jos ohjelmistotuotantoprojektin johtajalle on annettu ryhmän, jonka tiedollinen ja taidollinen taso on paljon heikompi kuin johtajan oma tiedon ja taidon taso, on autoritaarinen johtaminen tehokasta~\cite{Dhomne:2012:ITL:2382887.2382899}. Ketterisä mentelmissä päätöksenteon vastuu on annettu kehittäjäryhmille, joten autoritaarinen johtamistapa rikkoo ketterän manifestin periaatteita~\cite{fowler2001agile}.
+
+Laissez-faire on johtamistyyleistä projektin kannalta usein heikoin. Johtaja ei osallistu päätöksen tekoon. Johtaja jättää oman panostuksensa projektiin minimiin. Johtajat, jotka vastaavat useasta projektista saman aikaisesti ajautuvat, joissain projekteissaan tähän tyyliin oman kiinnostuksen ja ajan puutteen takia~\cite{Dhomne:2012:ITL:2382887.2382899}. Laissez-faire johtaminen voi toimia ketterässä kehityksessä koska ketterien menetelmien perustana on itsestään organisoituva kehitysryhmät~\cite{fowler2001agile}. Avoimessa kehityksessä aktiivinen johtaminen on tuloksellisuudne kannalta oleellista, joten Laissez-faire johtaminen ei ole avoimessa ohjelmistokehityksessä tehokasta~\cite{Li:2006:MOS:1125170.1125182}.
+
+
+
+Ligth touch management
+
+Adaptive leadership
+
+
+
+
+\section{Yhteenveto}
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Esimerkkilause ja lähdeviite~\cite{Zhang:2011:ECL:2047594.2047666}
+Esimerkkilause ja lähdeviite~\cite{Dhomne:2012:ITL:2382887.2382899}
+Esimerkkilause ja lähdeviite~\cite{Li:2006:MOS:1125170.1125182}
+
+
+
+
+
+
+% --- Back matter ---
+%
+
+% bibtex is used to generate the bibliography. The babplain style
+% will generate numeric references (e.g. [1]) appropriate for theoretical
+% computer science. If you need alphanumeric references (e.g [Tur90]), use
+%
+% \bibliographystyle{babalpha}
+%
+% instead.
+
+\bibliographystyle{babplain}
+\bibliography{references-fi}
+
+
+\end{document}
