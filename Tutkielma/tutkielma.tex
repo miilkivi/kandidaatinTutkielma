@@ -68,15 +68,15 @@
 % The following commands define the information used to generate title and
 % abstract pages. The following entries should be always specified:
 
-\title{Johtaminen ja johtajuus, rooli ja vaikutus ohjelmistotuotantoprojekteissa: ketterät mentelmät}
+\title{Johtaminen ja johtajuus ohejlmistotuotantoprojekteissa}
 \author{Mika Kivi}
 \date{\today}
-\level{Kandidaatin tutkielma}
-\abstract{Tiivistelmä.}
+\level{Kandidaatintutkielma}
+\abstract{Tiivistelmä}
 
 % The following can be used to specify keywords and classification of the paper:
 
-\keywords{johtaminen, ohjelmistotuotanprojektin johtaminen, muutos johtaminen}
+\keywords{Ohjelmistotuotanprojektin johtaminen, Johtajuus, Ohejlmistotuotantoprojektien hallinta, Johtajan persoonallisuus}
 \classification{} % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
                   % This is probably mostly relevant for computer scientists
 
@@ -108,11 +108,14 @@
 \makeabstract     % abstract page
 
 \tableofcontents  % table of contents
+\thispagestyle{empty}
 \newpage          % clear page after the table of contents
 
 
 % --- Main matter ---
 
+\setcounter{page}{1}
+\pagenumbering{arabic}
 \section{Johdanto}
 
 
@@ -265,18 +268,26 @@ Depnath ja kumppanit esittelevät artikkelissaan ~\cite{4017705} menetelmän jok
 
 Scrumissa projektilla on mahdollisuus syöksyä kaaokseen. Menetelmässä kaaokseen luisuminen voidaan estää erilaisilla kontrolleilla~\cite{schwaber1995scrum}. Kontrolleina scrumissa toimivat tuotteen kehitysjono, parannukset, paketit, muutokset, ongelmat, riskit, ratkaisut~\cite{schwaber1995scrum}. Näiden avulla projektiryhmä pystyy kehittämään sovellustaan pyrähdyksen aikana. Kontrollit uudelleen määritetään katselmuksessa jokaisen pyrähdyksen lopussa~\cite{schwaber1995scrum}.
 
-Parannukset ovat osia tuotteen kehitysjono, jotka toteutetaan seuraavaan julkaisuun~\cite{schwaber1995scrum}. Paketit koostuvat ohjelmiston osista joita tulee muuttaa, jotta tuotteen kehitysjono ominaisuus voidaan toteuttaa~\cite{schwaber1995scrum}. Muutokset ovat muutoksia jotka täytyy tehdä pakettiin, jotta ominaisuus voidaan toteuttaa~\cite{schwaber1995scrum}. Ongelmat ovat tilanteita, jotka syntyvät kun ominaisuutta toteutetaan. Ongelmat tulee ratkaista ennen kuin ominaisuus saadaan liitettyä projektiin~\cite{schwaber1995scrum}. Riskit ovat tilanteita, jotka tarvitsevat jatkuvaa huomiota, jotta projekti voi onnistua~\cite{schwaber1995scrum}. Näiden riskien hallintaa käsiteltiin tässä luvussa aikaisemmin. Ratkaisut ovat ratkaisuja ongelmiin joista syntyy muutoksia projektiin~\cite{schwaber1995scrum}.
+Parannukset ovat osia tuotteen kehitysjono, jotka toteutetaan seuraavaan julkaisuun~\cite{schwaber1995scrum}. Paketit koostuvat ohjelmiston osista joita tulee muuttaa, jotta tuotteen kehitysjono ominaisuus voidaan toteuttaa~\cite{schwaber1995scrum}. Muutokset ovat muutoksia, jotka täytyy tehdä pakettiin, jotta ominaisuus voidaan toteuttaa~\cite{schwaber1995scrum}. Ongelmat ovat tilanteita, jotka syntyvät kun ominaisuutta toteutetaan. Ongelmat tulee ratkaista ennen, kuin ominaisuus saadaan liitettyä projektiin~\cite{schwaber1995scrum}. Riskit ovat tilanteita, jotka tarvitsevat jatkuvaa huomiota, jotta projekti voi onnistua~\cite{schwaber1995scrum}. Näiden riskien hallintaa käsiteltiin tässä luvussa aikaisemmin. Ratkaisut ovat ratkaisuja ongelmiin, joista syntyy muutoksia projektiin~\cite{schwaber1995scrum}.
 
-XP:ssa on reagoitu valmiiksi muutamiin mahdollisiin riskitilanteisiin ja menetelmän kehittäjä Beck antaa ohjeistusta~\cite{796139}, kuinka toimia kyseisissä ongelmatilanteissa? Ongelmatilanteita voi syntyä kun ryhmä tuotoksellisuus on yliarvioitu, asiakas ei tahdo työskennellä yhteistyössä, henkilöstöön tapahtuu muutoksia kesken projektin, vaatimukset muuttuvat kesken kehityksen~\cite{796139}. Johtalla on suuri rooli näiden ongelmien ratkaisemisessa.
+XP:ssa on reagoitu valmiiksi muutamiin mahdollisiin riskitilanteisiin ja menetelmän kehittäjä Beck antaa ohjeistusta~\cite{796139}, kuinka toimia kyseisissä ongelmatilanteissa? Ongelmatilanteita voi syntyä kun ryhmä tuotoksellisuus on yliarvioitu, asiakas ei tahdo työskennellä yhteistyössä, henkilöstöön tapahtuu muutoksia kesken projektin, vaatimukset muuttuvat kesken kehityksen~\cite{796139}. Johtalla on tärkeä rooli näiden ongelmien ratkaisemisessa.
 
-Voiko ryhmä tehostaa toimintaa jotenkin, jotta saavutetaan luvattu taso? Jos tämä ei ole mahdollista pitää asiakkaan kanssa sopia mitä tehdään ja mitä siirretään seuraaviin iteraatiohin. Jos asiakas ei suostu toimimaan yhteistyössä johtajan pitää ensi tutkia omaa ja ryhmänsä toimintaa. Voimmeko me parantaa yhteistyötä jotain kautta? Jos tämä ei onnistu tulee asiasta puhua asiakkaan kanssa. XP:ssä ei ole sallittua ryhmän toimia omien arvailuidensa varassa~\cite{796139}. XP:ssä käytetään pari ohjelmointia, joten yhden henkilön lähteminen ryhmästä ei aiheuta suurta vahinkoa koska aina on toinen henkilö, joka tietää mitä on tehty. Lisäksi laajat testit kertovat oleellista ohjelmiston toiminnasta. Uuden henkilön liittyessä ryhmään hän voi harjoitella kokeneemman henkilön avulla~\cite{796139}. Mahdollisuus muutoksiin reagoimiseen on XP:ssä helppoa koska kehityksessä keskitytään pieniin osiin joista suuremmat kokonaisuudet koostuvat~\cite{796139}. Refaktoroinnin korostaminen kehityksessä helpottaa myös muutoksiin reagointia.   
+Kun johtaja huomaa, että ryhmä ei saavuta luvattuja ominaisuuksia, vaan jää joka sprintissä jälkeen asetetuista tavoitteista tulee johtajan löytää mahdolliset keinot tehostaa ryhmän toimintaa. Jos johtaja ei löydä näitä keinoja tulee hänen keskustella asiakkaan kanssa tilanteesta ja yhdessä he päättävät mitä siirretään tuleviin iteraatiohin. 
+
+Jos asiakas on haluton toiminaan yhteistyössä ryhmän kanssa tulee ryhmän ja ryhmän johtajan etsiä keinoja, joilla he voivat muuttaa omaa toimintaansa, jotta asiakkaan osallistuminen projektiin parantuisi. Asiakkaan kanssa tulee puhua ja etsiä syitä minkä takia asiakasta ei kiinnosta projektiin osallistuminen. XP:ssä ei ole sallittua kehitysryhmän toimiminen omien arvailuiden varassa, vaan asiakkaan tulee osallistua projektia koskeviin päätöksiin~\cite{796139}.
+
+Pariohjelmoinnin käyttö XP:ssä ehkäisee muutosten radikaalisuuttaa kun henkilöstö vaihtuu projektissa. Jokaista koodin osaa on ollut kehittämässä vähintään kaksi ryhmän jäsentä, joten tieto jokaisesta koodin osasta säilyy ryhmällä vaikka yksi ryhmän jäsenistä luopuisi projektiin osallistumisesta. Toinen seikka, joka helpottaa toimintaa henkilöstön vaihtuessa ovat XP:ssä suositut testit ja testaus kattavuus. Testeistä selviää mitä koodissa on tehty. Uuden henkilön liittyessä ryhmään henkilö voi harjoitella aluksi kokeneemman ja projektissa pidempään työskennelleen parina~\cite{796139}.
+
+Ketterät menetelmät pyrkivät vastaamaan nopeisiin muutoksiin projekteissa. XP:ssä muutoksiin reagoiminen on huomioitu kehittämällä projektia pienissä osissa joiden jälkeen projektin osiiin voidaan tehdä muutoksia tarvittaessa~\cite{796139}. Iteraation pituus 2 viikkoa mahdollistaa vain pienten osien kehittämisen kerralla. Refaktorointi on XP:ssä tärkeässä roollissa, joka helpottaa reagoimista muuttuviin tilanteisiin. 
+
+
  
 
 \section{Johtajan persoonallisuus}
 
-Ohjemistotuotantoprojekteissa johtajalla on monia mahdollisuuksia vahvistaa käytettävissä olevan ryhmänsä toimintaa. Ryhmä suoritukseen vaikkuttaa johtajanpersoona. Tehokaalla projektin johtajalla on kokemusta ja tietämystä käytettävistä tekniikoista ja ihmissuhdetaidoista ~\cite{McLeod:2011:FAS:1978802.1978803}. Johtajan ei tarvitse kuitenkaan olla ryhmästä henkilö, jolla on paras tuntemus käsiteltävästä asiasta~\cite{4017705}. Johtajan persoonnallisuuden vaikutuksista projektiin on tutkittu vähäisestii~\cite{Wang:2009:PMP:1639950.1640049}. 
+Ohjemistotuotantoprojekteissa johtajalla on monia mahdollisuuksia vahvistaa käytettävissä olevan ryhmänsä toimintaa. Ryhmän suoritukseen vaikkuttaa johtajanpersoona. Tehokaalla projektin johtajalla on kokemusta ja tietämystä käytettävistä tekniikoista ja ihmissuhdetaidoista ~\cite{McLeod:2011:FAS:1978802.1978803}. Johtajan ei tarvitse kuitenkaan olla ryhmästä henkilö, jolla on paras tuntemus käsiteltävästä aiheesta~\cite{4017705}. Johtajan persoonnallisuuden vaikutuksista projektiin on tutkittu vähäisesti ohjelmistotuotantoprojekteissa~\cite{Wang:2009:PMP:1639950.1640049}. 
 
-Persoonallisuuden vaikustusta voidaan tutkia erilaisten mallien avulla ja myös yhdistelemällä menetelmiä. Tässä luvussa esitellään kaksi erilaista mallia. Samalla tutustutaan johtamistyylien vaikutukseen johtamisessa. Luvun lopussa mallien ja johtamistyylien perusteella pyritään löytämään ominaisuuksia jotka ovat johtajalle hyödyllisiä johdettaessa ohjelmistotuotantoprojektia.  
+Persoonallisuuden vaikustusta voidaan tutkia erilaisten mallien avulla ja myös yhdistelemällä menetelmiä. Tässä luvussa esitellään kaksi erilaista persoonallisuuden tutkimusmallia. Mallit ovat Five Factor Model ja persoonallisuustyyppiteoria  Samalla tutustutaan johtamistyylien vaikutukseen ohjelmistotuotantoprojektien johtamisessa. Luvun lopussa mallien ja johtamistyylien perusteella pyritään löytämään ominaisuuksia jotka ovat johtajalle hyödyllisiä johdettaessa ohjelmistotuotantoprojektia.  
 
 
 \subsection{Persoonallisuuden arvionti mentelmät}
@@ -285,7 +296,8 @@ Ihmisten persoonallisuutta voidaan tutkia monilla erilaisilla menetelmillä~\cit
 
 FFM:ssä jokainen persoonnallisuuden piirre sisällytetään johonkin viidestä laajemmasta tekijästä. Viisi laajempaa tekijää, joita mallissa käytetään ovat  ulospäinsuuntautuneisuus, miellyttävyys, tunnollisuus, neuroottisuus ja avoinmuus uusille asiolle~\cite{barrick2006big, digman1990personality}. FFM:n tekijöillä on eri tutkimuksissa käytetty eri nimityksiä vaikka ajatus luokituksen takan on sama.  
 
-Ulospäinsuuntautuneisuudesta  on käytetty tutkimuksissa myös nimitystä avoinmuus~\cite{digman1990personality}. Ulospäinsuuntautunut johtaja toimii läheisessä yhteydessä kehittäjäryhmäänsä ja pyrkii luomaan lämpimän suhteen alaisiinsa.
+Ulospäinsuuntautuneisuudesta  on käytetty tutkimuksissa myös nimitystä avoinmuus~\cite{digman1990personality}. Ulospäinsuuntautunut henkilö arvostaa lämpimiä ja läheisiä suhteita erilaisten ihmisten kanssa~\cite{Wang:2009:PMP:1639950.1640049}.  Ulospäinsuuntautunut johtaja toimii läheisessä yhteydessä kehittäjäryhmäänsä ja pyrkii luomaan lämpimän suhteen alaisiinsa. 
+
 Johtajan miellyttävyyteen liitetään piirteitä, jotka rakentava  ryhmän jäsenten luottamusta johtajaan. Piirteitä ovat esimerkiksi kiltteys, auttavaisuus, yhteistyökykyisyys ja huomaavaisuus~\cite{Wang:2009:PMP:1639950.1640049}. Tutkimuksissa mielyttävyydestä on käytetty myös nimitystä ystävällisyys ja vihamielisyys~\cite{digman1990personality}. 
 
 FFM:ssä tunnollisuuden tekijällä tarkoitetaan piirteitä kuten itsekuri, velvollisuudentuntoisuus ja tavoitteellisuus~\cite{Wang:2009:PMP:1639950.1640049}. Tunnollisuuteen oleellisesti liittyy henkilön halu menestyä ja toteuttaa hänelle määrätyt tehtävät. Tunnollisuudesta on käytetty tutkimuksissa myös nimitystä tahto~\cite{digman1990personality}. 
@@ -296,21 +308,21 @@ Avoimuudella FFM:ssa tarkoitetaan kykyä löytää epätavallisia ideoita, mieli
 
 Wang ja Li yhdistivät tutkimuksessaan FFM:nä Mohan Thiten kehittämään malliin jonka avulla voidaan tutkia projektin johtamisen ja projektin onnistumisen välistä sudetta ~\cite{Wang:2009:PMP:1639950.1640049}. Luomansa mallin avulla Wang ja Li tutkivat johtajan persoonallisuuden vaikutusta ohjelmistotuotantoprojektin onnistumiseen. Tutkimuksien tuloksia ja FFM:n vaikutusta johtamiseen tarkastellaan myöhemmin tässä luvussa.
 
-Persoonallisuus tyyppi teoria on toinen tapa tutkia henkilöiden persoonallisuutta, jota on käytetty ohjelmistotuotantoprojekteissa. Persoonallisuus tyyppi teorian on kehittänyt Jung~\cite{jung1989psychological}. Myers ja Briggs kehittivät oman menetelmän jonka avulla voidaan arvioda henkilöitä ja sijoittaa heidät persoonallisuus tyyppi teorian akseleille~\cite{myers1985manual}. Tästä menetelmästä on puhuttu jo aiemmin tässä tutkielmassa ryhmän kokoamisen kohdalla. Tässä vaiheessa menetelmään tutustutaan tarkemmin, jotta sen avulla voidaan arvioda johtajan persoonallisuutta. 
+Persoonallisuustyyppiteoria on toinen tapa tutkia henkilöiden persoonallisuutta, jota on käytetty ohjelmistotuotantoprojekteissa. Persoonallisuus tyyppi teorian on kehittänyt Jung~\cite{jung1989psychological}. Myers ja Briggs kehittivät oman menetelmän jonka avulla voidaan arvioda henkilöitä ja sijoittaa heidät persoonallisuustyyppiteorian ulottuvuuksiin~\cite{myers1985manual}. Tästä menetelmästä on puhuttu jo aiemmin tässä tutkielmassa ryhmän kokoamisen kohdalla. Tässä vaiheessa menetelmään tutustutaan tarkemmin, jotta sen avulla voidaan arvioda johtajan persoonallisuutta. 
 
-Persoonallisuus tyyppi teoriassa henkilön persoonallisuus on jeattu neljään ulottuvuuteen. Jokaisella ulottuvuudella on kaksi preferenssiä~\cite{bradley1997effect}. Nämä preferenssit muodostavat vastakkaisuusparin. Yhdistelemällä neljän ulottuvuuden eri preferenssejä keskenään saadaan 16 erilaista persoonallisuutta joihin henkilöt voidaan sijoitttaa persoonallisuutensa mukaan.
+Persoonallisuustyyppiteoriassa henkilön persoonallisuus on jeattu neljään ulottuvuuteen. Jokaisella ulottuvuudella on kaksi preferenssiä~\cite{bradley1997effect}. Nämä preferenssit muodostavat vastakkaisuusparin. Yhdistelemällä neljän ulottuvuuden eri preferenssejä keskenään saadaan 16 erilaista persoonallisuutta joihin henkilöt voidaan sijoitttaa persoonallisuutensa mukaan.
 
-Persoonallisuus tyyppi teoriassa ulottuvuudet ovat henkilön asenne ympäristöön, henkilön tapa hankkia tietoa, päätöksenteön peruste ja elämäntyyli~\cite{bradley1997effect}. Ulottuvuuksista tideon hankinta ja päätöksenteon peruste voidaan yhdistää toisiinsa. Yhdistämisen avulla saadaa henkilöstä tieto, minkä avulla hän tekee päätöksensä ~\cite{bradley1997effect}. 
+Persoonallisuustyyppiteoriassa ulottuvuudet ovat henkilön asenne ympäristöön, henkilön tapa hankkia tietoa, päätöksenteön peruste ja elämäntyyli~\cite{bradley1997effect}. Ulottuvuuksista tideon hankinta ja päätöksenteon peruste voidaan yhdistää toisiinsa. Yhdistämisen avulla saadaa henkilöstä tieto, minkä avulla hän tekee päätöksensä ~\cite{bradley1997effect}. 
    
 Henkilö on joko ekstrovertti(E) tai introvertti(I). Ekstroverttille on luonnollista ryhmässä toimiminen. Ekstrovertti henkilöä kiinnostaa ihmiset ja kanssakäyminen. Introvertti henkilö saa energiaa toimiessaan yksinään. Introvertti on kiinnostunut ajatuksista ja on keskittynyt omaan toimintaansa. Nämä kaksi piirrettä kuvaavat henkilön erilaista suhtautumista ympäristöönsä.
 
-Henkilön tiedon hankinta voi perustua henkilön intuitioon(N) ja henkliö voi perustaa tietämyksensä tämän intuitionsa varaan. Toinen puoli tiedon hankinnan ulottuvuudesta on tosiasiallinen(S). Henkilö perustaa tietämyksensä koviin faktoihin.
+Henkilön tiedon hankinta voi perustua henkilön intuitioon(N) ja henkliö voi perustaa tietämyksensä tämän intuitionsa varaan. Toinen puoli tiedon hankinnan ulottuvuudesta on tosiasiallinen(S). Henkilö perustaa tietämyksensä koviin faktoihin. Henkilö tahtoo mahdollisimman paljon tietoa päätöksiin liittyen ennen, kuin hän tekee ratkaisun päätöksen suhteen.
 
 Havainnoin kanssa henkilön päätöksiin vaikuttaa oleellisesti minkä perusteella henkilö tekee päätöksensä. Henkilö perustaa päätöksensä ajatteluun(T) tai tunteisiin(F) joita hänellä on päätöksenteko tilanteessa.
 
-Teorian neljäs ulottuvuus on henkilön elämäntyyli. Ulottuvuus voidaan jakaa henkilöihin, jotka ovat harkitsevia. Harkitsevat henkilöt tahtovat elää suunniteltua elämää organisoidussa ympäristössä(J). Toinen puoli ihmisen elämäntyylin ulottuvuutta on spontaanius. Henkilön haluaa elää kaaoksen rajamailla ilman turhia sääntöjä.
+Teorian neljäs ulottuvuus on henkilön elämäntyyli. Ulottuvuus voidaan jakaa henkilöihin, jotka ovat harkitsevia. Harkitsevat henkilöt tahtovat elää suunniteltua elämää organisoidussa ympäristössä(J). Toinen puoli elämäntyylin ulottuvuutta on spontaanius. Henkilön haluaa elää kaaoksen rajamailla ilman turhia sääntöjä.
 
-Tässä osassa esittelin kaksi eri jaottelu tapaa ihmisen persoonallisuuden arviontiin. Esitellyt menetelmät olivat Five Facrot model (FFM) ja persoonallisuus tyyppi teoria. Kahden esitellyn menetelmän vaikutusta ohjelmisotuotantoprojektien johtamiseen ja niiden vaikutusta eri johtamistyyleihin tarkastellaan tämän luvun viimeisessä osassa.   
+Tässä osassa esittelin kaksi erilaista ihmisen persoonallisuuden arviontimenetelmää. Esitellyt menetelmät olivat Five Facrot model (FFM) ja persoonallisuustyyppiteoria, jonka avuksi esiteltiin MBTI menetelmä. Kahden esitellyn menetelmän vaikutusta ohjelmisotuotantoprojektien johtamiseen ja niiden vaikutusta eri johtamistyyleihin tarkastellaan tämän luvun viimeisessä osassa.   
 
 \subsection{Johtamistyylit}
 
@@ -318,9 +330,9 @@ Jokainen projektin johtaja on henkilönä erilainen ja johtajilla on erilaisia j
 
 Artikkelissaan ~\cite{Dhomne:2012:ITL:2382887.2382899} Dhomme ja Hall jakavat johtamistyylit kolmeen johtamistyyppiin. Tyypit ovat päätöksenteko-, aktiivinen johtaminen- ja persoonalliset auktoriteettiset tyylit. Päätöksenteko tyylejä ovat koordinoija, autoritaarinen ja laissez-faire. Aktiivisiin tyyleihin kirjataan valmentava ja tukeva tyyli. Karisma liitetään persoonallisiin auktoriteettisiin tyyleihin. Johtamistyyleistä voidaan puhua vain päätöksentekoon liittyvillä käsitteillä koska valmentava ja tukeva tyyli lukeutuvat koordinoijan osaksi ja karsmaattinen johtaja voi kuulua mihin tahansa päätöksenteon tyyleistä~\cite{Dhomne:2012:ITL:2382887.2382899}. 
 
-Koordinoivan johtajan ryhmässä päätökset syntyvät ryhmnäjäsenten päätöksistä. Johtaja pitää kuitenkin itsellään päätäntä oikeuden ongelmatilanteissa. Johtaja toimii valmentavana henkilönä, joka pyrkii kehittämään ryhmänsä jäseniä ja samalla kannustamaan heitä päätöksentekoon. Johtajan samaistuminen ryhmäläisen asemaan kuuluu koordinoivan tukevan johtajan tyyliin. Koordinoiva johtamistyyli voi olla aikaa tuhlaavaa, joten se ei sovellu nopeita päätöksiä vaativiin tehtäviin~\cite{Dhomne:2012:ITL:2382887.2382899}. Koordinoiva johtamistyyli ja etenkin tukeva tyyli sopivat ketterien menetelmien ideologiaan~\cite{fowler2001agile}.
+Koordinoivan johtajan ryhmässä päätökset syntyvät ryhmnäjäsenten päätöksistä. Johtaja pitää kuitenkin itsellään päätäntä oikeuden ongelmatilanteissa. Johtaja toimii valmentavana henkilönä, joka pyrkii kehittämään ryhmänsä jäseniä ja samalla kannustamaan heitä päätöksentekoon. Johtajan samaistuminen ryhmäläisen asemaan kuuluu koordinoivan ja tukevan johtajan tyyliin. Koordinoiva johtamistyyli voi olla aikaa tuhlaavaa, joten se ei sovellu nopeita päätöksiä vaativiin tehtäviin~\cite{Dhomne:2012:ITL:2382887.2382899}. Koordinoiva johtamistyyli ja etenkin tukeva johtmistyyli sopivat ketterien menetelmien ideologiaan~\cite{fowler2001agile}.
 
-Autokraatinen johtaja pitää päätökset omissa käsissään. Johtaja voi kysyä ryhmänjäseniltä mielipidettä kysymyksistä mutta päätökset johtaja tekee itse. Jos ohjelmistotuotantoprojektin johtajalle on annettu ryhmän, jonka tiedollinen ja taidollinen taso on paljon heikompi kuin johtajan oma tiedon ja taidon taso, on autokraatinen johtaminen tehokasta~\cite{Dhomne:2012:ITL:2382887.2382899}. Ketterisä mentelmissä päätöksenteon vastuu on annettu kehittäjäryhmille, joten autokraatinen johtamistapa rikkoo ketterän manifestin periaatteita~\cite{fowler2001agile}.
+Autokraatinen johtaja pitää päätökset omissa käsissään. Johtaja voi kysyä ryhmänjäseniltä mielipidettä projektiin liittyvistä kysymyksistä mutta päätökset johtaja tekee itse. Jos ohjelmistotuotantoprojektin johtajalle on annettu ryhmä, jonka tiedollinen ja taidollinen taso on paljon heikompi kuin johtajan oma tiedon ja taidon taso, on autokraatinen johtaminen tehokasta~\cite{Dhomne:2012:ITL:2382887.2382899}. Ketterisä mentelmissä päätöksenteon vastuu on annettu kehittäjäryhmille, joten autokraatinen johtamistapa rikkoo ketterän manifestin periaatteita~\cite{fowler2001agile}.
 
 Laissez-faire on johtamistyyleistä projektin kannalta usein heikoin. Johtaja ei osallistu päätöksen tekoon. Johtaja jättää oman panostuksensa projektiin minimiin. Johtajat, jotka vastaavat useasta projektista saman aikaisesti ajautuvat, joissain projekteissaan tähän tyyliin oman kiinnostuksen ja ajan puutteen takia~\cite{Dhomne:2012:ITL:2382887.2382899}. Laissez-faire johtaminen voi toimia ketterässä kehityksessä koska ketterien menetelmien perustana on itsestään organisoituva kehitysryhmät~\cite{fowler2001agile}. Ryhmä tarvitsee kuitenkin johtajaa, joka pitää ryhmän oikeilla raiteilla.
 
@@ -338,24 +350,24 @@ Johtajan persoonalle hyödyllisiä ominaisuuksia ovat kärsivällisyys, joustavu
 
 Wang ja Li löysivät tutkimuksessaan vahvistuksen olettamuksilleen FFM:n persoonallisuus tekijöiden vaikutuksesta projektin onnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}. FFM:n neljällä tekijällä viidestä oli positiivinen vaikutus projektin onnistumiseen. Neljän positiivisen vaikutuksen lisäksi tutkimuksessaan huomattiin että sosiaalisuudella on myös suoravaikutus projektin onnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}. 
 
-Johtajan ulospäinsuuntautuneisuudella on vaikutusta projektin onnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}. Ohjelmistotuotantoprojekteissa johtaja toimii asikkaan ja muiden yhteisyö tahojen kanssa yhteistyössä~\cite{McLeod:2011:FAS:1978802.1978803}, joten sosiaalisella johtajalla on näissä tilanteissa paremmat edellytykset onnistua.  
+Johtajan ulospäinsuuntautuneisuudella on vaikutusta projektin onnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}. Ohjelmistotuotantoprojekteissa johtaja toimii asikkaan ja muiden yhteisyö tahojen kanssa yhteistyössä~\cite{McLeod:2011:FAS:1978802.1978803}, joten sosiaalisella johtajalla on näissä tilanteissa paremmat edellytykset onnistua. Ulospäinsuuntautunut johtja osoittaa kiinnostusta ryhmänsä toimintaa kohtaan, joka voi nostaa ryhmän työskentely motivaatiota.  
 
 
-Miellyttävä projektinjohtaja rakentaa ryhmän koheesiota. Ryhmä jonka sisäinen koheesio on parempi saavuttaa projektin tavoitteet todennäköisemmin~\cite{bahli2005group}. Wang ja Li saivat samansuuntaisen päätelmän että miellyttävällä johtajalla on positiivinen vaikutus projektin onnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}.
+Miellyttävä projektinjohtaja rakentaa ryhmän koheesiota. Ryhmä jonka sisäinen koheesio on parempi saavuttaa projektin tavoitteet todennäköisemmin~\cite{bahli2005group}. Wang ja Li saivat samansuuntaisen päätelmän että miellyttävällä johtajalla on positiivinen vaikutus projektin onnistumiseen~\cite{Wang:2009:PMP:1639950.1640049}. Miellyttävään johtajaan on alaisten helmpompi samaistua. Johtajan miellyttävyys rakentaa johtaja-seuraaja suhdetta.
 
-Itsekuri, velvollisuudentuntoisuus ja tavoitteellisuus johtajan piirteinä vaikuttavat projektin tulokseen positiivisesti~\cite{Wang:2009:PMP:1639950.1640049}. Johtaja toimii esimies asemassa ja samalla alaisilleen esimerkkinä, joka mahdolllisesti parantaa kehitysryhmän tuloksellisuutta. Laissez-faire johtamis tyyli ei sovellu tähän luonteen piirteiden kuvaukseen, koska laissez-faire tyylinen johtaja ei ole kiinnostunut ryhmänsä toiminnasta. Motivoitunu johtaja stimuloi myös alaisiaan älyllisesti, joka auttaa ryhmään löytämään ongelmiin erilaisia ratkaisuja~\cite{thite2000leadership}.
+Itsekuri, velvollisuudentuntoisuus ja tavoitteellisuus johtajan piirteinä vaikuttavat projektin tulokseen positiivisesti~\cite{Wang:2009:PMP:1639950.1640049}. Johtaja toimii esimies asemassa ja samalla alaisilleen esimerkkinä, joka mahdolllisesti parantaa kehitysryhmän tuloksellisuutta. Laissez-faire johtamis tyyli ei sovellu näiden luonteen piirteiden kuvaukseen, koska laissez-faire tyylinen johtaja ei ole kiinnostunut ryhmänsä toiminnasta eikä välttämättä edes projektin lopputuloksesta. Motivoitunut johtaja stimuloi myös alaisiaan älyllisesti, joka auttaa ryhmää löytämään ongelmiin erilaisia ratkaisuja~\cite{thite2000leadership}.
 
-Tutkimuksessaan Wang ja Li saivat selville että johtajan avoinmuus ja älykkyys vaikuttavat positiivisesti  projektin tuloksiini~\cite{Wang:2009:PMP:1639950.1640049}. Ulospäinsuuntautuneet ihmiset soveltuvat muutosjohtamiseen koska tämän kaltaiset ihmiset ovat valmiita yrittämään uusia asioita. Johtaja, joka ei ole avoin voi ohittaa muuttuvat tekniset vaatimukset ja mahdollisuudet. Johtamistyyleistä avoinmuus voidaan liittää koordinoivaan johtamiseen, joka mahdollistaa alaistensa päätösten ja ideoiden toteutumisen.
+Tutkimuksessaan Wang ja Li saivat selville että johtajan avoinmuus ja älykkyys vaikuttavat positiivisesti  projektin tuloksiini~\cite{Wang:2009:PMP:1639950.1640049}. Avoimet ihmiset soveltuvat muutosjohtamiseen koska tämän kaltaiset ihmiset ovat valmiita yrittämään uusia asioita ja löytämään tehokkaampia ratkaisuja käsiteltäviin ongelmiin. Johtaja, joka ei ole avoin voi ohittaa muuttuvat tekniset vaatimukset ja mahdollisuudet. Johtamistyyleistä avoinmuus voidaan liittää koordinoivaan johtamiseen, joka mahdollistaa alaistensa päätösten ja ideoiden toteutumisen.
 
 Autoritaarinen johtaja eikä laissez-faire johtaja huomio alaisiaan ja seuraajiaan. Koordinoiva johtaja pyrkii huomiomaan alaisensa, seuraajansa ja muut projektin onnistumiseen vaikuttavat henkilöt. Koordinoiva johtaja on usein sosiaalinen, jotta johtaja onnistuu huomioimaan kaikki projektiin osallistuvat osapuolet. 
 
-Wang ja Li huomasivat että neuroottiset luonteenpiirteet ovat negatiivisesti sidottuina projektin menestymiseen~\cite{Wang:2009:PMP:1639950.1640049}. Neuroottiset henkilöt suhtautuvat usein negatiivisesti työtään kohtaan. Neuroottinen johtaja ajautuu usein tilanteissa johtamistyyliltään Laissez-faire tyyliseen johtamiseen.
+Wang ja Li huomasivat että neuroottiset luonteenpiirteet ovat negatiivisesti sidottuina projektin menestymiseen~\cite{Wang:2009:PMP:1639950.1640049}. Neuroottiset henkilöt suhtautuvat usein negatiivisesti työtään kohtaan. Neuroottinen johtaja ajautuu usein tilanteissa johtamistyyliltään Laissez-faire tyyliseen johtamiseen. Autoritaarinen johtaja voidaan kokea usein myös neuroottiseksi. Kun johtaja päättää itsenäisesti alaiset usein kokevat tämän negatiivisena ja heidät sivuuttavana. Tilanteissa johtajan luonteesta syntyy alaisille neuroottinen kuva.
 
-Persoonallisuus tyyppi teorian määrittelyllä luonnollinen johtaja on ominaisuuksiltaan ENTJ-johtaja~\cite{bradley1997effect}. Johtaja on siis ekstrovertti, jonka voi olettaa jo ilman suurempia tutkimuksia. Tutkimuksen ovat vahvistaneet tämän olettamuksen~\cite{bradley1997effect}. Jos johtaja olisi introvertti keskittyisi hän enemän omaan toimintaansa kuin muiden toimintaan. Introvertti johtaja   
+Persoonallisuus tyyppi teorian määrittelyllä luonnollinen johtaja on ominaisuuksiltaan ENTJ-johtaja~\cite{bradley1997effect}. Johtaja on siis ekstrovertti, jonka voi olettaa jo ilman suurempia tutkimuksia. Tutkimuksen ovat vahvistaneet tämän olettamuksen~\cite{bradley1997effect}. Jos johtaja olisi introvertti keskittyisi hän enemän omaan toimintaansa kuin muiden toimintaan. Introvertti johtaja ei kykene motivoimaan ryhmäänsä. Introvertillä on hankalampaa saavuttaa johtaja-seuraaja suhdetta alaistensan kanssa koska alaiset eivät tiedä johtajansa visiosta.   
 
-Mihin tietoon johtaja perustaa päätöksensä riippuu ongelmasta jota projekti toteuttaa. Yksinkertaisissa ja projekteissa, joissa ei ole tarvetta kehittää uutta, johtaja peruustaa päätöksesnsä usein kovii faktoihin~\cite{bradley1997effect}. Yksinkertaisissa projekteissa tehokas johtaja voi olla tyyliltään ESTJ. Monimutkaisissa projekteissa ja projekteissa, jossa luodaan jotain uutta johtajan päätökset perustuvat enemmän intuitioon~\cite{bradley1997effect}. Ohjelmistotuotantoprojektit ovat usein monimutkaisia joten ohjelmistotuotantoprojekteissa tehokas johtaja on ominaisuuksiltaan ENTJ.  
+Mihin tietoon johtaja perustaa päätöksensä riippuu ongelmasta jota projektityhmä toteuttaa. Yksinkertaisissa ja projekteissa, joissa ei ole tarvetta kehittää uutta, johtaja peruustaa päätöksesnsä usein kovii faktoihin~\cite{bradley1997effect}. Yksinkertaisissa projekteissa tehokas johtaja voi olla tyyliltään ESTJ. Monimutkaisissa projekteissa ja projekteissa, jossa luodaan jotain uutta johtajan päätökset perustuvat enemmän intuitioon~\cite{bradley1997effect}. Ohjelmistotuotantoprojektit ovat usein monimutkaisia joten ohjelmistotuotantoprojekteissa tehokas johtaja on ominaisuuksiltaan ENTJ.  
 
-Tunteillaan päättävä johtaja voi suosia eräitä ryhmänjäseniä tehdessään päätöksiä, jotka vaikuttavat projektin kulkuun. Tehokkaan johtajan tulee perustaa päätöksensä ajatteluunsa~\cite{bradley1997effect}. Tehokas johtaja tahotoo toimia organisoidussa ja hallitussa ympäristössä~\cite{bradley1997effect}. Ketterässä kehityksessä ja yleisesti ohjelmistotuotannossa toimitaan muuttavassa ympäristössä, jossa vaatimukset muuttuvat. Johtajan kannalta on hyödyllistä että ryhmän toimintaa kontrolloi jokin kehityskehys kuten XP tai scrum, jotta saavutetaan organisoitu ympäristö.
+Tunteillaan päättävä johtaja voi suosia eräitä ryhmänjäseniä tehdessään päätöksiä, jotka vaikuttavat projektin kulkuun. Tehokkaan johtajan tulee perustaa päätöksensä ajatteluunsa~\cite{bradley1997effect}. Tehokas johtaja tahotoo toimia organisoidussa ja hallitussa ympäristössä~\cite{bradley1997effect}. Ketterässä kehityksessä ja yleisesti ohjelmistotuotannossa toimitaan muuttavassa ympäristössä, jossa vaatimukset muuttuvat. Johtajan kannalta on hyödyllistä että ryhmän toimintaa kontrolloi jokin kehitysmenetelmä kuten XP tai scrum, jotta saavutetaan organisoitu ympäristö.
 
 Johtajan karisma nousee esiin usein tutkimuksissa puhuttaessa tehokkaasta johtamisesta~\cite{Dhomne:2012:ITL:2382887.2382899, thite2000leadership}. Karismaattinen johtaja kykenee esittämään alaisilleen ideansa ja uskomuksensa niin että alaisten on helpompi samaistua arvoihin~\cite{thite2000leadership}. Alaisen samaistuessa johtajan arvoihin syntyy johtajan ja alaisen välille johtaja-seuraaja suhde~\cite{raccoon2006leadership}.  
 
@@ -380,9 +392,6 @@ Johtajan persoonallisuudella ja johtamistavalla on suuri vaikutus ohjelmistotuot
 
 
 
-Esimerkkilause ja lähdeviite~\cite{Zhang:2011:ECL:2047594.2047666}
-Esimerkkilause ja lähdeviite~\cite{Dhomne:2012:ITL:2382887.2382899}
-Esimerkkilause ja lähdeviite~\cite{Li:2006:MOS:1125170.1125182}
 
 
 
